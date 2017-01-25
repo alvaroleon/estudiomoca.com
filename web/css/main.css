@@ -66,11 +66,25 @@
 }
 .inner-wrapper {
     background-color: #fff;
-    margin: 2rem;
+    margin: 0;
     width: inherit;
     backface-visibility: hidden;
     overflow: hidden;
     position: relative;
+}
+
+.building {
+    margin-top: 1em;
+}
+
+.building a {
+    color: rgb(243, 148, 9);
+    text-decoration: underline;
+    transition: all 0.5s;
+}
+
+.building a:hover {
+    color: rgb(255, 153, 8);
 }
 
 
