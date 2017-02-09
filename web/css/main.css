@@ -85,7 +85,7 @@
     bottom: 0;
     box-sizing: content-box;
     height: 100%;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     transform: translate3d(320px, 0px, 0px);
@@ -109,7 +109,7 @@
     z-index: 1000;
 }
 .mask-canvas {
-    background: rgba(45, 97, 158, 0.7) !important;
+    background: rgba(255, 185, 28, 0.7) !important;
 }
 .offest-nav-canvas.show-nav {
     transform: translate3d(0px, 0px, 0px);
@@ -212,17 +212,35 @@ section.moca .inner-moca {
 .header .right-part {
     float: right;
 }
+header{
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+header.fixed {
+    background-color: #fff;
+    background-color: rgba(256,256, 256, 0.9);
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+.header.fixed .logo {
+    margin-top: 0;
+}
 .header .left-part {
     float: left;
 }
 .header .logo {
     display: block;
-    height: 100px;
+    margin: 20px 0 0 60px;
+    position: relative;
     width: 100px;
-    position: fixed;
     z-index: 99;
-    margin-left: 40px;
-    margin-top: 40px;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
 }
 .moca-text {
     color: #ffffff;
@@ -236,7 +254,7 @@ section.moca .inner-moca {
 }
 h1 {
     font-size: 36px;
-    color: rgba(243, 148, 9, 1.0);
+    color: rgba(255, 185, 28, 1);
     line-height: 48px;
     letter-spacing: 1px;
     position: relative;
@@ -266,12 +284,22 @@ h1 {
     margin-top: 40px;
     position: relative;
 }
+.header.fixed .toggle-navigation {
+    margin-top: 25px;
+}
+.header.fixed .toggle-navigation .toggle-nav-canvas .lines,
+.header.fixed .toggle-navigation .toggle-nav-canvas .lines::after,
+.header.fixed .toggle-navigation .toggle-nav-canvas .lines::before{
+    background-color: #999;
+}
 .header .toggle-navigation a {
     display: block;
     height: 25px;
     width: 28px;
 }
 .header .toggle-navigation .lines {
+    height: 2px;
+    width: 28px;
     transform: translate(0px, 10px) rotate(0deg);
     -webkit-transform: translate(0px, 10px) rotate(0deg);
     -ms-transform: translate(0px, 10px) rotate(0deg);
@@ -295,14 +323,15 @@ h1 {
     -moz-transform: translate(0px, 4px) rotate(0deg);
 }
 .header .toggle-navigation .lines:before {
-    transform: translate(0px, -4px) rotate(0deg);
-    -webkit-transform: translate(0px, -4px) rotate(0deg);
-    -ms-transform: translate(0px, -4px) rotate(0deg);
-    -moz-transform: translate(0px, -4px) rotate(0deg);
+    transform: translate(0px, -6px) rotate(0deg);
+    -webkit-transform: translate(0px, -6px) rotate(0deg);
+    -ms-transform: translate(0px, -6px) rotate(0deg);
+    -moz-transform: translate(0px, -6px) rotate(0deg);
 }
+.header .toggle-navigation .toggle-nav-canvas .lines,
 .header .toggle-navigation .toggle-nav-canvas .lines:after,
 .header .toggle-navigation .toggle-nav-canvas .lines:before {
-    background: #efefef;
+    background: #ddd;
 }
 .header .toggle-navigation.active .lines:after {
     transform: translate(0px, -1px) rotate(45deg);
@@ -315,6 +344,10 @@ h1 {
     -webkit-transform: translate(0px, 1px) rotate(-45deg);
     -ms-transform: translate(0px, 1px) rotate(-45deg);
     -moz-transform: translate(0px, 1px) rotate(-45deg);
+}
+.header .toggle-navigation.active .lines,
+.header.fixed .toggle-navigation.active .lines{
+    background-color: transparent;
 }
 
 
@@ -336,7 +369,7 @@ h1 {
     -webkit-border-radius: 4px 4px 0 0;
 }
 .intro-content {
-    background: rgba(243, 148, 9, 1.0);
+    background: rgba(255, 185, 28, 1);
 	overflow:hidden;
 	position:relative;
 }
@@ -410,7 +443,7 @@ h1 {
     width: 14%;
 }
 .plus-btn {
-    background: rgba(243, 148, 9, 1.0);
+    background: rgba(255, 185, 28, 1);
     border-radius: 50px;
     -webkit-border-radius: 50px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -428,7 +461,7 @@ h1 {
     width: 40px;
 }
 .plus-btn {
-    background: rgba(243, 148, 9, 1.0) none repeat scroll 0 0;
+    background: rgba(255, 185, 28, 1) none repeat scroll 0 0;
     border-radius: 50px;
 	-webkit-border-radius: 50px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -465,7 +498,7 @@ h1 {
 /*Quote section*/
 
 .quote-content h4 {
-    color: rgba(243, 148, 9, 1.0);
+    color: rgba(255, 185, 28, 1);
     font-size: 20px;
 }
 .quote-content.img h4 {
@@ -517,7 +550,7 @@ h1 {
     background-clip: border-box;
     background-origin: padding-box;
     background-image: none;
-    background-position: 50% 50% !important;
+    background-position: 50% top !important;
     background-repeat: repeat;
     background-size: cover !important;
 }
@@ -565,7 +598,7 @@ h1 {
     left: 50%;
 }
 .expertise-block i {
-    color: rgba(243, 148, 9, 1.0);
+    color: rgba(255, 185, 28, 1);
     display: block;
     font-size: 20px;
     margin-bottom: 10px;
@@ -672,7 +705,7 @@ p.column {
 }
 .equipo-info {
     position: absolute;
-    background: rgba(243, 148, 9, .7);
+    background: rgba(255, 185, 28, 0.8);
     width: 100%;
     height: 100%;
     top: 0;
@@ -1167,16 +1200,12 @@ p.column {
 
 
 /*Media queries*/
-
 @media screen and (max-width: 1366px) {
     .inner-wrapper {
         margin: 0;
     }
     .moca-text h1 {
         font-size: 32px;
-    }
-    .header .logo {
-        margin-left: 23px;
     }
     .header .toggle-navigation {
         margin-right: 23px;
@@ -1253,9 +1282,6 @@ p.column {
     }
     .moca-text h1.line-left:before {
         content: " ";
-    }
-    .header .logo {
-        margin-left: 40px;
     }
     .header .toggle-navigation {
         margin-right: 40px;
