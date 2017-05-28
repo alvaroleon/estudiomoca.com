@@ -315,7 +315,7 @@ p {
     top: 0;
     display: block;
     height: 100%;
-    widows: 100%;
+    width: 100%;
     background: #ffffff;
     opacity: 0;
 }
