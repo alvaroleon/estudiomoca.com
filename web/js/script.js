@@ -13,6 +13,19 @@
 
     });
 
+    /* HEADER FIJO */
+    $(window).scroll(function () {
+        if($(window).width() > 768){
+            if ($(document).scrollTop() > 60) {
+                $('header').addClass('fixed');
+            }
+            else {
+                $('header').removeClass('fixed');
+            }
+        }
+
+    });
+
 
     // Site moca setup
 

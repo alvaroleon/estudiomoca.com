@@ -320,7 +320,7 @@ p {
     opacity: 0;
 }
 .box a.more {
-    background-color: rgba(243, 148, 9, 1.0);
+    background-color: rgba(255, 185, 28, 1.0);
     border-radius: 50px;
     -webkit-border-radius: 50px;
     color: #ffffff;
@@ -449,7 +449,7 @@ nav.main-nav ul,
     position: relative;
 }
 .but.line:before {
-    background: rgba(243, 148, 9, 1.0);
+    background: rgba(255, 185, 28, 1.0);
     content: "";
     height: 45px;
     left: 50%;
@@ -475,7 +475,7 @@ nav.main-nav ul,
 .but.opc {
     color: #ffffff;
     border: none;
-    background: rgba(243, 148, 9, 1.0);
+    background: rgba(255, 185, 28, 1.0);
 }
 .but i {
     position: relative;
