@@ -360,13 +360,15 @@ h1 {
   background: rgba(243, 148, 9, 1);
   overflow: hidden;
   position: relative;
+
   &.push-right {
     padding: 80px 89px 80px 70px;
     border-radius: 0 4px 4px 0;
     -webkit-border-radius: 0 4px 4px 0;
-    margin: 25px 0;
+    //smargin: 25px 0;
     position: relative;
     width: 57.1%;
+
     &:before {
       border-bottom: 1190px solid #2d619e;
       border-left: 867px solid rgba(0, 0, 0, 0);
@@ -1897,7 +1899,7 @@ p.column {
 /*End media queries*/
 
 body {
-  background-color: #1abc9c;
+  background-color: #f39409;
 }
 
 .arrows {
