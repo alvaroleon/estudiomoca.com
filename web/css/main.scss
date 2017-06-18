@@ -1,3 +1,5 @@
+$main-color: #F39409;
+$second-color: #6F2887;
 /*
 * 	Copyright 2017
 * 	www.estudiomoca.com
@@ -23,11 +25,6 @@
 	16.Contact section
 	17.Footer
 	18.Media queries
-
-
-
-
-
 /*Preloader*/
 
 .loader {
@@ -252,7 +249,7 @@ h1 {
 .moca-text {
   h2 {
     font-size: 3em;
-    color: rgba(243, 148, 9, 1);
+    color: $main-color;
     line-height: 1.2em;
     letter-spacing: 1px;
     position: relative;
@@ -357,7 +354,7 @@ h1 {
 }
 
 .intro-content {
-  background: rgba(243, 148, 9, 1);
+  background: $main-color;
   overflow: hidden;
   position: relative;
 
@@ -408,7 +405,6 @@ h1 {
     }
   }
   h2 {
-    color: #ffffff;
     font-size: 20px;
     color: #fff;
   }
@@ -435,7 +431,7 @@ h1 {
 }
 
 .plus-btn {
-  background: rgba(243, 148, 9, 1);
+  background: $main-color;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -451,7 +447,7 @@ h1 {
   text-align: center;
   top: -40px;
   width: 40px;
-  background: rgba(243, 148, 9, 1) none repeat scroll 0 0;
+  background: $main-color none repeat scroll 0 0;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -487,7 +483,7 @@ h1 {
 
 .quote-content {
   h4 {
-    color: rgba(243, 148, 9, 1);
+    color: $main-color;
     font-size: 20px;
   }
   &.img {
@@ -597,7 +593,7 @@ h1 {
     left: 50%;
   }
   i {
-    color: rgba(243, 148, 9, 1);
+    color: $main-color;
     display: block;
     font-size: 20px;
     margin-bottom: 10px;
@@ -2010,9 +2006,9 @@ header nav ul li.active a:after{
   padding: 1em 2em;
   border-radius: 1em;
 
-  &:hover {
-    background-color: #F39409;
-    border-color: #F39409;
+  &:hover, &.yellow {
+    background-color: $main-color;
+    border-color: $main-color;
   }
 
   i {
@@ -2058,7 +2054,7 @@ header nav ul li.active a:after{
 /*End media queries*/
 
 body {
-  background-color: #f39409;
+  background-color: $main-color;
 }
 
 .arrows {
