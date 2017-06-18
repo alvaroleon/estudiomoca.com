@@ -1,3 +1,5 @@
+$main-color: #F39409;
+$second-color: #6F2887;
 /*
 * 	Copyright 2017
 * 	www.estudiomoca.com
@@ -23,11 +25,6 @@
 	16.Contact section
 	17.Footer
 	18.Media queries
-
-
-
-
-
 /*Preloader*/
 
 .loader {
@@ -76,7 +73,7 @@
 
 /*Aside and navigation*/
 
-.offest-nav-canvas {
+/*.offest-nav-canvas {
   backface-visibility: hidden;
   background: #ffffff;
   bottom: 0;
@@ -94,6 +91,129 @@
   width: 320px;
   z-index: 1001;
 }
+*/
+
+.offest-nav-canvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 12, 37, 0.9);
+  padding-top: 114px;
+  pointer-events: all;
+  overflow: hidden;
+  //display: none;
+  z-index: 101;
+
+  .inner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    .main-nav {
+      width: 80%;
+      margin: 0 auto;
+      position: relative;
+      -ms-flex: 1;
+      box-sizing: border-box;
+      height: 50%;
+      min-height: 200px;
+      order: 1;
+
+      strong {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      div.menu-new { //ul
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        list-style: none;
+        padding: 0 25px;
+        margin: 0;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+
+        > div {
+          float: none !important;
+          height: 50%;
+
+          a {
+            font-family: 'Montserrat-SemiBold', "Helvetica", "Arial", sans-serif;
+            padding: 0 2em;
+            font-size: 2em;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            -ms-flex-pack: center;
+            transition: all 250ms ease 0ms;
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+
+            &:hover {
+              background: $main-color;
+            }
+
+            span {
+              font-family: "Helvetica", "Arial", sans-serif;
+              font-size: 0.9rem;
+              font-weight: 200;
+              color: rgba(255,255,255,0.7);
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-bottom {
+      order: 2;
+      display: none;
+      width: 100%;
+      list-style: none;
+      padding: 0 25px;
+      margin: 0;
+      display: -ms-flexbox;
+      display: flex;
+      position: relative;
+
+      li {
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        padding: 8vh 25px;
+        width: 100%;
+      }
+    }
+  }
+}
 
 .mask-overlap .mask-canvas {
   backface-visibility: hidden;
@@ -105,10 +225,6 @@
   right: 0;
   top: 0;
   z-index: 1000;
-}
-
-.mask-canvas {
-  background: rgba(45, 97, 158, 0.7) !important;
 }
 
 .offest-nav-canvas.show-nav {
@@ -223,7 +339,7 @@ section.moca {
     height: 100px;
     width: 100px;
     position: fixed;
-    z-index: 99;
+    z-index: 200;
     margin-left: 40px;
     margin-top: 40px;
   }
@@ -242,7 +358,7 @@ section.moca {
 
 h1 {
   font-size: 3em;
-  color: rgba(243, 148, 9, 1);
+  color: $main-color;
   line-height: 1.2em;
   letter-spacing: 1px;
   position: relative;
@@ -252,7 +368,7 @@ h1 {
 .moca-text {
   h2 {
     font-size: 3em;
-    color: rgba(243, 148, 9, 1);
+    color: $main-color;
     line-height: 1.2em;
     letter-spacing: 1px;
     position: relative;
@@ -357,7 +473,7 @@ h1 {
 }
 
 .intro-content {
-  background: rgba(243, 148, 9, 1);
+  background: $main-color;
   overflow: hidden;
   position: relative;
 
@@ -435,7 +551,7 @@ h1 {
 }
 
 .plus-btn {
-  background: rgba(243, 148, 9, 1);
+  background: $main-color;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -451,7 +567,7 @@ h1 {
   text-align: center;
   top: -40px;
   width: 40px;
-  background: rgba(243, 148, 9, 1) none repeat scroll 0 0;
+  background: $main-color none repeat scroll 0 0;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -487,7 +603,7 @@ h1 {
 
 .quote-content {
   h4 {
-    color: rgba(243, 148, 9, 1);
+    color: $main-color;
     font-size: 20px;
   }
   &.img {
@@ -597,7 +713,7 @@ h1 {
     left: 50%;
   }
   i {
-    color: rgba(243, 148, 9, 1);
+    color: $main-color;
     display: block;
     font-size: 20px;
     margin-bottom: 10px;
@@ -1851,9 +1967,9 @@ p.column {
   padding: 1em 2em;
   border-radius: 1em;
 
-  &:hover {
-    background-color: #F39409;
-    border-color: #F39409;
+  &:hover, &.yellow {
+    background-color: $main-color;
+    border-color: $main-color;
   }
 
   i {
@@ -1899,7 +2015,7 @@ p.column {
 /*End media queries*/
 
 body {
-  background-color: #f39409;
+  background-color: $main-color;
 }
 
 .arrows {
