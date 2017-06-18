@@ -25,32 +25,79 @@
 
     });
 
+    /* SCROLL BAR */
+    $(window).on('load', function(){
+        var getMax = function(){
+            return $(document).height() - $(window).height();
+        }
+        var getValue = function(){
+            return $(window).scrollTop();
+        }
+        if('max' in document.createElement('progress')){
+            // Browser supports progress element
+            var progressBar = $('progress');
+
+            // Set the Max attr for the first time
+            progressBar.attr({ max: getMax() });
+
+            $(document).on('scroll', function(){
+                // On scroll only Value attr needs to be calculated
+                progressBar.attr({ value: getValue() });
+            });
+
+            $(window).resize(function(){
+                // On resize, both Max/Value attr needs to be calculated
+                progressBar.attr({ max: getMax(), value: getValue() });
+            });
+        }
+        else {
+            var progressBar = $('progress'),
+                max = getMax(),
+                value, width;
+
+            var getWidth = function(){
+                // Calculate width in percentage
+                value = getValue();
+                width = (value/max) * 100;
+                width = width + '%';
+                return width;
+            }
+
+            var setWidth = function(){
+                progressBar.css({ width: getWidth() });
+            }
+
+            $(document).on('scroll', setWidth);
+            $(window).on('resize', function(){
+                // Need to reset the Max attr
+                max = getMax();
+                setWidth();
+            });
+        }
+    });
 
     // Site moca setup
-
     function mainmocaResize() {
         $(".moca.index").css('height', $(window).height());
     }
 
-    $(function () {
-        mainmocaResize()
-    }),
-        $(window).resize(function () {
+    $(function() {
+            mainmocaResize()
+        }),
+        $(window).resize(function() {
             mainmocaResize()
         });
 
 
     // Site navigation setup
 
-    $(".toggle-navigation a, .mask-canvas").on("click", function (e) {
-        e.preventDefault();
+    $(".toggle-navigation a, .mask-canvas").on("click", function() {
 
-
-        /*$(".toggle-navigation").toggleClass("active");
-         $('.offest-nav-canvas ').toggleClass('show-nav');
-         $('.inner-wrapper ').toggleClass('mask-overlap');
-         $('body').toggleClass('stop-scroll');
-         return false;*/
+        $(".toggle-navigation").toggleClass("active");
+        $('.offest-nav-canvas ').toggleClass('show-nav');
+        $('.inner-wrapper ').toggleClass('mask-overlap');
+        $('body').toggleClass('stop-scroll');
+        return false;
     });
 
 
@@ -92,7 +139,6 @@
     $(".percentage").each(function () {
         var height = $(this).text();
         $(this).css("height", height);
-
     });
 
 

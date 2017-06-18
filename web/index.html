@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <link rel="icon" type="image/png" href="http://www.estudiomoca.com/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#442A5E">
     <!-- Css -->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
     <link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all">
@@ -24,6 +23,9 @@
 <div class="loader">
     <!-- Preloader inner -->
     <div class="loader-inner">
+        <div class="logo-loader">
+            <img src="img/logo-troquelado.png" alt="Estudio MOCA">
+        </div>
         <h4>cargando data...</h4>
     </div>
     <!-- End preloader inner -->
@@ -38,39 +40,21 @@
         <!--Offset navigation-->
         <aside class="offest-nav-canvas ">
             <!--Main navigation-->
-            <div class="inner">
-                <nav class="main-nav">
-                    <strong>Menu</strong>
-                    <div class="menu-new">
-                        <div class="col-md-4"><a href="#up"><span class="paragraph">Ir al inicio</span>Home</a></div>
-                        <div class="col-md-4"><a href="#nosotros"><span class="paragraph">¿Quienes somos?</span>Nosotros</a></div>
-                        <div class="col-md-4"><a href="#lo-que-hacemos"><span class="paragraph">Nuestros servicios</span>Lo que
-                            hacemos</a></div>
-                        <div class="col-md-4">
-                            <a href="#clientes"><span class="paragraph">Quién a trabajado con nosotros</span>Clientes</a></div>
-                        <div class="col-md-4"><a href="#equipo"><span class="paragraph">Somos un gran equipo</span>Equipo</a></div>
-                        <div class="col-md-4"><a href="#trabajos"><span class="paragraph">Nuestro trabajo</span>Trabajos</a></div>
-                    </div>
-                </nav>
-
-                <div class="nav-bottom">
-
-                    <li>
-
-                        <div class="work-with-us">
-                            <p>¿Tienes un proyecto en mente?</p>
-                            <a class="but brd mt-40 pbutton yellow" href="#">
-                                <i class="fa fa-coffee" aria-hidden="true"></i>
-                                Conversemos
-                                <span class="arrow left"><i class="icon-angle-right"></i></span></a>
-                        </div>
-
-                    </li>
-                </div>
-            </div>
+            <nav class="main-nav">
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="moca.html">Moca</a></li>
+                    <li><a href="portafolio.html">Portafolio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
             <!--End main navigation-->
             <!--Socials navigation-->
-
+            <div class="socials-nav">
+                <ul class="socials">
+                    <li><a href="#" target="_blank"><i class="icon-facebook"></i></a></li>
+                </ul>
+            </div>
             <!--End socials navigation-->
         </aside>
         <!--End offset navigation-->
@@ -82,17 +66,33 @@
                 <div class="logo left-part">
                     <h1>
                         <a href="index.html">
-                            <img alt="Estudio Moca: Agencia marketing digital, desarrollo de aplicaciones y web" src="img/logo.png">
+                            <img alt="Estudio Moca - Marketing Digital, Desarrollo de Aplicaciones y Web" src="img/logo.png">
                         </a>
                     </h1>
                 </div>
-                <div class="toggle-navigation right-part">
+
+                <nav>
+                    <ul>
+                        <li class="active"><a href="index.html">Inicio</a></li>
+                        <li><a href="#" title="Somos">Somos</a></li>
+                        <li><a href="#" title="Lo que hacemos">Lo que hacemos</a></li>
+                        <li><a href="#" title="Equipo">Equipo</a></li>
+                        <li><a href="#" title="Trabajos">Trabajos</a></li>
+                        <li><a href="mailto:hola@estudiomoca.com" title="Contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <progress  value="0" id="progressBar">
+                    <div class="progress-container">
+                        <span class="progress-bar"></span>
+                    </div>
+                </progress>
+                <!--div class="toggle-navigation right-part">
                     <div class="toggle-nav-canvas">
                         <a href="#">
                             <div class="lines"></div>
                         </a>
                     </div>
-                </div>
+                </div-->
             </header>
             <!--End header-->
             <!--Inner moca-->
@@ -112,7 +112,7 @@
                     <!--Row-->
                     <div class="row">
                         <div class="col-sm-12 ">
-                            <h2 class="mb-50 uppercase home-title">
+                            <h2 class="mb-50 home-title">
                                 Somos <span>diseñadores, desarrolladores y comunicadores digitales</span><br><span>unidos en un solo equipo</span>.
                             </h2>
 
@@ -131,9 +131,7 @@
                     <!--End row-->
                 </div>
                 <!--End container-->
-                <a class="home-down" href="#descubrenos">
-                    <div class="arrows"></div>
-                </a>
+                <a class="home-down" href="#descubrenos"><div class="arrows"></div></a>
 
             </div>
             <!--End inner moca-->
@@ -149,11 +147,8 @@
                     <div class="col-sm-12 ">
                         <div class="main-lead mb-80">
                             <h3 class="mb-10">Estudio MOCA</h3>
-                            <p>Es un equipo de multidiciplinario de productores digitales <br> cuyo prisma son las
-                                soluciones comerciales altamente efectivas. <br>Nos enfocamos en los clientes y
-                                usuarios.
-                                <br>Nuestro
-                                producto es a base de una estrategia de <strong>marketing digital</strong>.
+                            <p>Somos un equipo de multidiciplinario de productores digitales <br>cuyo prisma son las soluciones comerciales altamente efectivas. <br>Nos enfocamos en los clientes y usuarios.
+                                <br>Nuestro producto es a base de una estrategia de <strong>marketing digital</strong>.
                             </p>
                         </div>
                     </div>
@@ -340,305 +335,255 @@
                         <li><img src="img/logo/isel.png" alt=""></li>
                         <li><img src="img/logo/delaferia.png" alt=""></li>
                         <li><img src="img/logo/rhein.png" alt=""></li>
-                        <li><img src="img/logo/grey.png" alt=""></li>
-                    </ul>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-        </section>
-        <!--End client  section-->
+                        <li><img src="img/logo/argos.png" alt=""></li>
+                     </ul>
+                  </div>
+                  <!--End row-->
+               </div>
+               <!--End container-->
+            </section>
+            <!--End client  section-->
 
-        <!--Equipo section-->
-        <section class="equipo pt-100 pb-100">
-            <!--Container-->
-            <div class="container">
-                <!--Row-->
-                <div class="row">
-                    <div class="col-sm-12 ">
+            <!--Equipo section-->
+            <section class="equipo pt-100 pb-100">
+               <!--Container-->
+               <div class="container">
+                  <!--Row-->
+                  <div class="row">
+                     <div class="col-sm-12 ">
                         <div class="main-lead mb-80">
-                            <h3 class="mb-10">Equipo.</h3>
-                            <p>Para poder entregar un trabajo hecho a la medida,<br>ofrecemos un equipo experto en sus
-                                áreas:</p>
+                           <h3 class="mb-10">Equipo.</h3>
+                           <p>Para poder entregar un trabajo hecho a la medida,<br>ofrecemos un equipo experto en sus áreas:</p>
                         </div>
-                    </div>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-            <!--Container-->
-            <div class="container">
-                <!--Row-->
-                <div class="row">
-                    <div class="col-sm-3">
+                     </div>
+                  </div>
+                  <!--End row-->
+               </div>
+               <!--End container-->
+               <!--Container-->
+               <div class="container">
+                  <!--Row-->
+                  <div class="row">
+                     <div class="col-sm-3">
                         <!--equipo block-->
                         <div class="equipo-block">
-                            <!--equipo info-->
-                            <div class="equipo-info">
-                                <h6 class=" text-center">Claudio Monardes<span> Director de desarrollo</span></h6>
-                                <ul class="equipo-socials">
-                                    <li>
-                                        <a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/claudio-monardes-885a9667/"><i class="icon-linkedin"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--End equipo info-->
-                            <img src="img/team/cmonardes.jpg" alt="">
+                           <!--equipo info-->
+                           <div class="equipo-info">
+                              <h6 class=" text-center">Claudio Monardes<span> Director de desarrollo</span></h6>
+                              <ul class="equipo-socials">
+                                 <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/claudio-monardes-885a9667/"><i class="icon-linkedin"></i></a></li>
+                              </ul>
+                           </div>
+                           <!--End equipo info-->
+                           <img src="img/team/cmonardes.jpg" alt="">
                         </div>
                         <!--End equipo block-->
-                    </div>
-                    <div class="col-sm-3">
+                     </div>
+                     <div class="col-sm-3">
                         <!--equipo block-->
                         <div class="equipo-block text-center">
-                            <!--equipo info-->
-                            <div class="equipo-info ">
-                                <h6 class=" text-center">Álvaro León<span> Director comercial</span></h6>
-                                <ul class="equipo-socials">
-                                    <li>
-                                        <a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/aleonn/"><i class="icon-linkedin"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--End equipo info-->
-                            <img src="img/team/aleon.jpg" alt="">
+                           <!--equipo info-->
+                           <div class="equipo-info ">
+                              <h6 class=" text-center">Álvaro León<span> Director comercial</span></h6>
+                              <ul class="equipo-socials">
+                                  <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/aleonn/"><i class="icon-linkedin"></i></a></li>
+                              </ul>
+                           </div>
+                           <!--End equipo info-->
+                           <img src="img/team/aleon.jpg" alt="">
                         </div>
                         <!--End equipo block-->
-                    </div>
-                    <div class="col-sm-3">
+                     </div>
+                     <div class="col-sm-3">
                         <!--equipo block-->
                         <div class="equipo-block text-center">
-                            <!--equipo info-->
-                            <div class="equipo-info ">
-                                <h6 class=" text-center">Gonzalo Camus<span> Director UX/UI</span></h6>
-                                <ul class="equipo-socials">
-                                    <li>
-                                        <a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/gonzalocamus/"><i class="icon-linkedin"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--End equipo info-->
-                            <img src="img/team/gcamus.jpg" alt="">
+                           <!--equipo info-->
+                           <div class="equipo-info ">
+                              <h6 class=" text-center">Gonzalo Camus<span> Director UX/UI</span></h6>
+                              <ul class="equipo-socials">
+                                  <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/gonzalocamus/"><i class="icon-linkedin"></i></a></li>
+                              </ul>
+                           </div>
+                           <!--End equipo info-->
+                           <img src="img/team/gcamus.jpg" alt="">
                         </div>
                         <!--End equipo block-->
-                    </div>
-                    <div class="col-sm-3">
+                     </div>
+                     <div class="col-sm-3">
                         <!--equipo block-->
                         <div class="equipo-block text-center">
-                            <!--equipo info-->
-                            <div class="equipo-info ">
-                                <h6 class="text-center">Jorge Carrillo<span> Director de proyectos</span></h6>
-                                <ul class="equipo-socials">
-                                    <li>
-                                        <a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/jorgecarrilloaguila/"><i class="icon-linkedin"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--End equipo info-->
-                            <img src="img/team/jcarrillo.jpg" alt="">
+                           <!--equipo info-->
+                           <div class="equipo-info ">
+                              <h6 class="text-center">Jorge Carrillo<span> Director de proyectos</span></h6>
+                              <ul class="equipo-socials">
+                                  <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/jorgecarrilloaguila/"><i class="icon-linkedin"></i></a></li>
+                              </ul>
+                           </div>
+                           <!--End equipo info-->
+                           <img src="img/team/jcarrillo.jpg" alt="">
                         </div>
                         <!--End equipo block-->
-                    </div>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-        </section>
-        <!--End equipo  section-->
+                     </div>
+                  </div>
+                  <!--End row-->
+               </div>
+               <!--End container-->
+            </section>
+            <!--End equipo  section-->
 
-        <!--Portafolio section-->
-        <section class="portfolio bg-grey pt-100 pb-100">
-            <!--Container-->
-            <div class="container">
-                <!--Row-->
-                <div class="row">
-                    <div class="col-sm-12 ">
+            <!--Portafolio section-->
+            <section class="portfolio bg-grey pt-100 pb-100">
+               <!--Container-->
+               <div class="container">
+                  <!--Row-->
+                  <div class="row">
+                     <div class="col-sm-12 ">
                         <div class="main-lead mb-80">
-                            <h3 class="mb-10">Algunos trabajos.</h3>
-                            <p>Nuestros trabajos hablan por sí solos.
-                                <br> Contáctanos para trabajar juntos.
-                            </p>
+                           <h3 class="mb-10">Algunos trabajos.</h3>
+                           <p>Nuestros trabajos hablan por sí solos.
+                              <br> Contáctanos para trabajar juntos.
+                           </p>
                         </div>
-                    </div>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-            <!--Container-->
-            <div class="container ">
-                <!--Row-->
-                <div class="row">
-                    <div class="col-sm-4">
+                     </div>
+                  </div>
+                  <!--End row-->
+               </div>
+               <!--End container-->
+               <!--Container-->
+               <div class="container ">
+                  <!--Row-->
+                  <div class="row">
+                     <div class="col-sm-4">
                         <!--box-->
                         <div class="box work">
-                            <div class="box-img">
-                                <img src="img/portfolio/delaferia.jpg" alt="">
-                            </div>
-                            <div class="box-content">
+                           <div class="box-img">
+                              <img src="img/portfolio/delaferia.jpg" alt="">
+                           </div>
+                           <div class="box-content">
                                 <h3>DelaFeria.cl</h3>
-                                <p>Ecommerce desarrollado en Woocommerce.<br>Estrategia - UX/UI - Frontend y Backend</p>
-                            </div>
-                            <a class="link" href="portfolio_single.html"></a>
-                            <a class="venobox more" href="img/portfolio/1.jpg">
-                           <span>
-                           <i class="icon-search-6"></i>
-                           </span>
-                            </a>
+                                <p>Ecommerce desarrollado en Woocommerce.<br>Estrategia / UX-UI / Frontend / Backend</p>
+                           </div>
                         </div>
                         <!--End box-->
-                    </div>
-                    <div class="col-sm-4">
+                     </div>
+                     <div class="col-sm-4">
                         <!--box-->
                         <div class="box work">
-                            <div class="box-img">
-                                <img src="img/portfolio/rhein.png" alt="Cuadernos Rhein">
-                            </div>
-                            <div class="box-content">
+                           <div class="box-img">
+                              <img src="img/portfolio/rhein.png" alt="Cuadernos Rhein">
+                           </div>
+                           <div class="box-content">
                                 <h3>Rhein.cl</h3>
-                                <p>Sitio Back To School de Rhein.<br>Diseño - Frontend y Backend (Wordpress)</p>
-                            </div>
-                            <a class="link" href="portfolio_single.html"></a>
-                            <a class="venobox more" href="img/portfolio/rhein.png">
-                           <span>
-                           <i class="icon-search-6"></i>
-                           </span>
-                            </a>
+                                <p>Sitio Back To School de Rhein.<br>UI / Frontend / Backend (Wordpress)</p>
+                           </div>
                         </div>
                         <!--End box-->
-                    </div>
-                    <div class="col-sm-4">
+                     </div>
+                     <div class="col-sm-4">
                         <!--box-->
                         <div class="box work">
-                            <div class="box-img">
-                                <img src="img/portfolio/village.jpg" alt="">
-                            </div>
-                            <div class="box-content ">
+                           <div class="box-img">
+                              <img src="img/portfolio/village.jpg" alt="">
+                           </div>
+                           <div class="box-content ">
                                 <h3>Village.cl</h3>
-                                <p>Sitio corporativo animado.<br>Frontend y Backend</p>
-                            </div>
-                            <a class="link" href="portfolio_single.html"></a>
-                            <a class="venobox more" href="img/portfolio/3.jpg">
-                           <span>
-                           <i class="icon-search-6"></i>
-                           </span>
-                            </a>
+                                <p>Sitio corporativo.<br>Frontend / Backend</p>
+                           </div>
                         </div>
                         <!--End box-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <!--box-->
-                        <div class="box work">
-                            <div class="box-img">
-                                <img src="img/portfolio/bendito.png" alt="Tienda Bendito">
-                            </div>
-                            <div class="box-content">
-                                <h3>Bendito.cl</h3>
-                                <p>Ecommerce desarrollado en Woocommerce.<br>UX/UI - Frontend y Backend</p>
-                            </div>
-                            <a class="link" href="portfolio_single.html"></a>
-                            <a class="venobox more" href="img/portfolio/bendito.png">
-                           <span>
-                           <i class="icon-search-6"></i>
-                           </span>
-                            </a>
-                        </div>
-                        <!--End box-->
-                    </div>
-                    <div class="col-sm-4">
-                        <!--box-->
-                        <div class="box work">
-                            <div class="box-img">
-                                <img src="img/portfolio/unknownlocations.png" alt="Unknownlocations">
-                            </div>
-                            <div class="box-content">
-                                <h3>unknownlocations.com</h3>
-                                <p>Sitio para la búsqueda de locaciones.<br>Frontend y Backend</p>
-                            </div>
-                            <a class="link" href="portfolio_single.html"></a>
-                            <a class="venobox more" href="img/portfolio/unknownlocations.png">
-                           <span>
-                           <i class="icon-search-6"></i>
-                           </span>
-                            </a>
-                        </div>
-                        <!--End box-->
-                    </div>
-                    <div class="col-sm-4">
-                        <!--box-->
-                        <div class="box work">
-                            <div class="box-img">
-                                <img src="img/portfolio/village.jpg" alt="Sitio corporativo de Village">
-                            </div>
-                            <div class="box-content ">
-                                <h3>Village.cl</h3>
-                                <p>Sitio corporativo animado.<br>Frontend y Backend</p>
-                            </div>
-                            <a class="link" href="portfolio_single.html"></a>
-                            <a class="venobox more" href="img/portfolio/3.jpg">
-                           <span>
-                           <i class="icon-search-6"></i>
-                           </span>
-                            </a>
-                        </div>
-                        <!--End box-->
-                    </div>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-            <!--Container-->
-            <div class="container ">
-                <!--Row-->
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a class="but opc  mt-100 line" href="portfolio.html">Ve todos nuestros trabajos
-                            <span class="arrow left"><i class="icon-angle-right"></i></span></a>
-                    </div>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-        </section>
-        <!--End portafolio section-->
+                     </div>
+                  </div>
+                   <div class="row">
+                       <div class="col-sm-4">
+                           <!--box-->
+                           <div class="box work">
+                               <div class="box-img">
+                                   <img src="img/portfolio/bendito.png" alt="Tienda Bendito">
+                               </div>
+                               <div class="box-content">
+                                   <h3>Bendito.cl</h3>
+                                   <p>Ecommerce desarrollado en Woocommerce.<br>UX-UI / Frontend / Backend</p>
+                               </div>
+                           </div>
+                           <!--End box-->
+                       </div>
+                       <div class="col-sm-4">
+                           <!--box-->
+                           <div class="box work">
+                               <div class="box-img">
+                                   <img src="img/portfolio/unknownlocations.png" alt="Unknownlocations">
+                               </div>
+                               <div class="box-content">
+                                   <h3>unknownlocations.com</h3>
+                                   <p>Sitio para la búsqueda de locaciones.<br>Frontend / Backend</p>
+                               </div>
+                           </div>
+                           <!--End box-->
+                       </div>
+                       <div class="col-sm-4">
+                           <!--box-->
+                           <div class="box work">
+                               <div class="box-img">
+                                   <img src="img/portfolio/isel.png" alt="Landing KOMAX Düssel">
+                               </div>
+                               <div class="box-content ">
+                                   <h3>El Volcan</h3>
+                                   <p>Sitio promocionañ para sus marcas destacadas. <br>UI / Frontend / Backend</p>
+                               </div>
+                           </div>
+                           <!--End box-->
+                       </div>
+                   </div>
+                  <!--End row-->
+               </div>
+               <!--End container-->
+               <!--Container-->
+               <!--div class="container ">
+                  <div class="row">
+                     <div class="col-md-12 text-center">
+                        <a class="but opc  mt-100 line" href="portfolio.html">Ve todos nuestros trabajos <span class="arrow left"><i class="icon-angle-right"></i></span></a>
+                     </div>
+                  </div>
 
-        <!--Footer-->
-        <footer class="footer pt-120 pb-120">
-            <a class="plus-btn" href="#top"><i class="icon-up-open"></i></a>
-            <!--Container-->
-            <div class="container ">
-                <!--Row-->
-                <div class="row">
-                    <div class="col-md-12 text-center">
+               </div-->
+               <!--End container-->
+            </section>
+            <!--End portafolio section-->
+
+            <!--Footer-->
+            <footer class="footer pt-20 pb-20">
+               <a class="plus-btn" href="#top"><i class="icon-up-open"></i></a>
+               <!--Container-->
+               <div class="container ">
+                  <!--Row-->
+                  <div class="row">
+                     <div class="col-md-12 text-center">
                         <div class="logo left-part">
-                            <img alt="" src="img/logo.png">
+                           <img  alt="" src="img/logo.png">
                         </div>
                         <p class="mt-10">© 2017 Estudio Moca. Todos los derechos reservados.</p>
                         <ul class="socials mt-15">
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-vimeo"></i></a></li>
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-instagram"></i></a></li>
+                           <li><a href="#" target="_blank"><i class="icon-facebook"></i></a></li>
                         </ul>
-                    </div>
-                </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-        </footer>
-        <!--End footer-->
+                     </div>
+                  </div>
+                  <!--End row-->
+               </div>
+               <!--End container-->
+            </footer>
+            <!--End footer-->
 
-    </div>
-    <!--End inner wrapper-->
-</div>
-<!-- End wrapper-->
-<!--Javascript-->
-<script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>
-<script src="js/owl.carousel.js" type="text/javascript"></script>
-<script src="js/venobox.min.js" type="text/javascript"></script>
-<script src="js/script.js" type="text/javascript"></script>
-<!-- Google analytics -->
-<!-- End google analytics -->
-</body>
+         </div>
+         <!--End inner wrapper-->
+      </div>
+      <!-- End wrapper-->
+      <!--Javascript-->
+      <script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>
+      <script src="js/owl.carousel.js" type="text/javascript"></script>
+      <script src="js/venobox.min.js" type="text/javascript"></script>
+      <script src="js/script.js" type="text/javascript"></script>
+      <!-- Google analytics -->
+      <!-- End google analytics -->
+   </body>
 </html>
 
