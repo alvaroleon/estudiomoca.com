@@ -4,7 +4,7 @@
     <!-- Metas -->
     <meta charset="utf-8">
     <title>MOCA - Estudio de Marketing, Diseño y Desarrollo Digital.</title>
-    <meta name="description" content="">
+    <meta name="description" content="Somos diseñadores, desarrolladores y comunicadores digitales unidos en un solo equipo. Hacemos una estrategia integral: Diseñamos sitios web, plataformas digitales y cualquier tipo de desarrollo digital, pensamos en los usuarios sin perder el foco comercial.">
     <link rel="icon" type="image/png" href="http://www.estudiomoca.com/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Css -->
@@ -16,6 +16,17 @@
     <link href="css/owl-carousel/owl.theme.css" rel="stylesheet" media="all">
     <link href="css/venobox.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all">
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-90854345-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 </head>
 <body class="stop-scroll">
 
@@ -65,7 +76,7 @@
             <header class="header">
                 <div class="logo left-part">
                     <h1>
-                        <a class="home" href="#inicio" title="Estudio MOCA">
+                        <a class="home" href="#inicio" title="Estudio MOCA"  onclick="ga('send', 'event', 'Logo');">
                             <img alt="Estudio Moca - Marketing Digital, Desarrollo de Aplicaciones y Web" src="img/logo.png">
                         </a>
                     </h1>
@@ -78,12 +89,12 @@
 
                 <nav>
                     <ul>
-                        <li class="page active"><a href="#inicio">Inicio</a></li>
-                        <li class="page"><a href="#somos" title="Somos">Somos</a></li>
-                        <li class="page"><a href="#lo-que-hacemos" title="Lo que hacemos">Lo que hacemos</a></li>
-                        <li class="page"><a href="#equipo" title="Equipo">Equipo</a></li>
-                        <li class="page"><a href="#portafolio" title="Portafolio">Portafolio</a></li>
-                        <li><a href="mailto:hola@estudiomoca.com" title="Contacto">Contacto</a></li>
+                        <li class="page active"><a href="#inicio" title="Inicio" onclick="ga('send', 'event','Menu', 'Inicio');">Inicio</a></li>
+                        <li class="page"><a href="#somos" title="Somos" onclick="ga('send', 'event','Menu', 'Somos');">Somos</a></li>
+                        <li class="page"><a href="#lo-que-hacemos" title="Lo que hacemos" onclick="ga('send', 'event','Menu', 'QueHacemos');">Lo que hacemos</a></li>
+                        <li class="page"><a href="#equipo" title="Equipo" onclick="ga('send', 'event','Menu', 'Equipo');">Equipo</a></li>
+                        <li class="page"><a href="#portafolio" title="Portafolio" onclick="ga('send', 'event','Menu', 'Portafolio');">Portafolio</a></li>
+                        <li><a href="mailto:hola@estudiomoca.com" title="Contacto" onclick="ga('send', 'event','Menu', 'Contacto');">Contacto</a></li>
                     </ul>
                 </nav>
                 <progress  value="0" id="progressBar">
@@ -126,7 +137,7 @@
                                 pensamos en los usuarios sin perder el foco comercial.<span>|</span>
                             </p>
 
-                            <a class="but brd mt-40 pbutton" href="mailto:hola@estudiomoca.com" title="hola@estudiomoca.com">
+                            <a class="but brd mt-40 pbutton" href="mailto:hola@estudiomoca.com" onclick="ga('send', 'event','Inicio', 'Convercemos');" title="hola@estudiomoca.com">
                                 <i class="fa fa-coffee" aria-hidden="true"></i>
 
                                 Conversemos
@@ -136,7 +147,7 @@
                     <!--End row-->
                 </div>
                 <!--End container-->
-                <a class="home-down home" href="#somos"><div class="arrows"></div></a>
+                <a class="home-down home" href="#somos" onclick="ga('send', 'event','Inicio', 'Flechas');"><div class="arrows"></div></a>
 
             </div>
             <!--End inner moca-->
@@ -168,7 +179,7 @@
                     <div class="col-md-8 img-content radius">
                         <div class="img-block">
                             <div class="background-img">
-                                <img alt="" src="img/site/estudio.jpg">
+                                <img alt="Estudio Moca Marketing Digital Desarrollo de Software" src="img/site/estudio.jpg">
                             </div>
                         </div>
                     </div>
@@ -315,7 +326,7 @@
                 <div class="row">
                     <div class="quote-box text-center">
                         <div class="col-md-12">
-                            <a class="but opc mt-40 line" href="#">conversemos
+                            <a class="but opc mt-40 line" href="mailto:hola@estudiomoca.com" onclick="ga('send', 'event','ProyectoMente', 'Convercemos');">conversemos
                                 <span class="arrow left"><i class="icon-angle-right"></i></span></a>
                             <h4 class="mt-20">¿Tienes algún proyecto en mente?</h4>
                         </div>
@@ -336,12 +347,12 @@
                     <!-- As a general rule, include a heading (h1-h6) as a child of each section and article element for screen readers purposes-->
                     <h2 class="indent">Clientes.</h2>
                     <ul id="client-carousel">
-                        <li><img src="img/logo/made.png" alt=""></li>
-                        <li><img src="img/logo/bendito.png" alt=""></li>
-                        <li><img src="img/logo/isel.png" alt=""></li>
-                        <li><img src="img/logo/delaferia.png" alt=""></li>
-                        <li><img src="img/logo/rhein.png" alt=""></li>
-                        <li><img src="img/logo/argos.png" alt=""></li>
+                        <li><img src="img/logo/made.png" alt="Made Jeans"></li>
+                        <li><img src="img/logo/bendito.png" alt="Bendito"></li>
+                        <li><img src="img/logo/isel.png" alt="Isel - El Volcan"></li>
+                        <li><img src="img/logo/delaferia.png" alt="Delaferia Semillas de Marihuana"></li>
+                        <li><img src="img/logo/rhein.png" alt="Cuadernos y artículos de oficina Rhein"></li>
+                        <li><img src="img/logo/argos.png" alt="Argos Cotillón"></li>
                      </ul>
                   </div>
                   <!--End row-->
@@ -377,11 +388,11 @@
                            <div class="equipo-info">
                               <h6 class=" text-center">Claudio Monardes<span> Director de desarrollo</span></h6>
                               <ul class="equipo-socials">
-                                 <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/claudio-monardes-885a9667/"><i class="icon-linkedin"></i></a></li>
+                                 <li><a title="Ir al perfil de Linkedin" onclick="ga('send', 'event','Equipo', 'Linkedin', 'Claudio');" target="_blank" href="https://www.linkedin.com/in/claudio-monardes-885a9667/"><i class="icon-linkedin"></i></a></li>
                               </ul>
                            </div>
                            <!--End equipo info-->
-                           <img src="img/team/cmonardes.jpg" alt="">
+                           <img src="img/team/cmonardes.jpg" alt="Claudio Monardes">
                         </div>
                         <!--End equipo block-->
                      </div>
@@ -392,11 +403,11 @@
                            <div class="equipo-info ">
                               <h6 class=" text-center">Álvaro León<span> Director comercial</span></h6>
                               <ul class="equipo-socials">
-                                  <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/aleonn/"><i class="icon-linkedin"></i></a></li>
+                                  <li><a title="Ir al perfil de Linkedin" onclick="ga('send', 'event','Equipo', 'Linkedin', 'Alvaro');" target="_blank" href="https://www.linkedin.com/in/aleonn/"><i class="icon-linkedin"></i></a></li>
                               </ul>
                            </div>
                            <!--End equipo info-->
-                           <img src="img/team/aleon.jpg" alt="">
+                           <img src="img/team/aleon.jpg" alt="Álvaro León">
                         </div>
                         <!--End equipo block-->
                      </div>
@@ -407,11 +418,11 @@
                            <div class="equipo-info ">
                               <h6 class=" text-center">Gonzalo Camus<span> Director UX/UI</span></h6>
                               <ul class="equipo-socials">
-                                  <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/gonzalocamus/"><i class="icon-linkedin"></i></a></li>
+                                  <li><a title="Ir al perfil de Linkedin" onclick="ga('send', 'event','Equipo', 'Linkedin', 'Gonzalo');" target="_blank" href="https://www.linkedin.com/in/gonzalocamus/"><i class="icon-linkedin"></i></a></li>
                               </ul>
                            </div>
                            <!--End equipo info-->
-                           <img src="img/team/gcamus.jpg" alt="">
+                           <img src="img/team/gcamus.jpg" alt="Gonzalo Camus">
                         </div>
                         <!--End equipo block-->
                      </div>
@@ -422,11 +433,11 @@
                            <div class="equipo-info ">
                               <h6 class="text-center">Jorge Carrillo<span> Director de proyectos</span></h6>
                               <ul class="equipo-socials">
-                                  <li><a title="Ir al perfil de Linkedin" target="_blank" href="https://www.linkedin.com/in/jorgecarrilloaguila/"><i class="icon-linkedin"></i></a></li>
+                                  <li><a title="Ir al perfil de Linkedin" onclick="ga('send', 'event','Equipo', 'Linkedin', 'Jorge');" target="_blank" href="https://www.linkedin.com/in/jorgecarrilloaguila/"><i class="icon-linkedin"></i></a></li>
                               </ul>
                            </div>
                            <!--End equipo info-->
-                           <img src="img/team/jcarrillo.jpg" alt="">
+                           <img src="img/team/jcarrillo.jpg" alt="Jorge Carrillo">
                         </div>
                         <!--End equipo block-->
                      </div>
@@ -463,7 +474,7 @@
                         <!--box-->
                         <div class="box work">
                            <div class="box-img">
-                              <img src="img/portfolio/delaferia.jpg" alt="">
+                              <img src="img/portfolio/delaferia.jpg" alt="Delaferia Estrategia UX Frontend Backend">
                            </div>
                            <div class="box-content">
                                 <h3>DelaFeria.cl</h3>
@@ -489,7 +500,7 @@
                         <!--box-->
                         <div class="box work">
                            <div class="box-img">
-                              <img src="img/portfolio/village.jpg" alt="">
+                              <img src="img/portfolio/village.jpg" alt="Village.cl">
                            </div>
                            <div class="box-content ">
                                 <h3>Village.cl</h3>
@@ -558,18 +569,18 @@
 
             <!--Footer-->
             <footer class="footer pt-20 pb-20">
-               <a class="plus-btn" href="#top"><i class="icon-up-open"></i></a>
+               <a class="plus-btn" href="#top" onclick="ga('send', 'event', 'Footer', 'Up');"><i class="icon-up-open"></i></a>
                <!--Container-->
                <div class="container ">
                   <!--Row-->
                   <div class="row">
                      <div class="col-md-12 text-center">
                         <div class="logo left-part">
-                           <img  alt="" src="img/logo.png">
+                           <img alt="Estudio Moca Agencia Digital Marketing" src="img/logo.png">
                         </div>
                         <p class="mt-10">© 2017 Estudio Moca. Todos los derechos reservados.</p>
                         <ul class="socials mt-15">
-                           <li><a href="#" target="_blank"><i class="icon-linkedin"></i></a></li>
+                           <li><a href="https://www.linkedin.com/company-beta/15192501/" onclick="ga('send', 'event', 'Footer', 'Linkedin');" target="_blank"><i class="icon-linkedin"></i></a></li>
                         </ul>
                      </div>
                   </div>
