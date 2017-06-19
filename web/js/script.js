@@ -21,10 +21,10 @@
     $(document).on("scroll", onScroll);
 
     //smoothscroll
-    $('header.header nav ul li.page a, a.home').on('click', function(event) {
+    $('header.header nav ul li.page a').on('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $($anchor.attr('href')).offset().top +20
         }, 500);
         //$('header.header nav ul li').removeClass('active');
         //$(this).parent().addClass('active');
