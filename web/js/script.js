@@ -1,8 +1,55 @@
 (function ($) {
     "use strict";
 
-    // Windows load
 
+    // MENU MOBILE
+    $('a.btn-menu-mobile').on('click', function(event) {
+        event.preventDefault();
+        if($(this).hasClass('open')){
+            $('body').removeClass('no-scroll');
+            $(this).removeClass('open');
+            $('header.header nav').removeClass('show-menu');
+        }
+        else{
+            $('body').addClass('no-scroll');
+            $(this).addClass('open');
+            $('header.header nav').addClass('show-menu');
+        }
+    });
+
+    // SCROLLTO MENU
+    $(document).on("scroll", onScroll);
+
+    //smoothscroll
+    $('header.header nav ul li.page a, a.home').on('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 500);
+        //$('header.header nav ul li').removeClass('active');
+        //$(this).parent().addClass('active');
+        event.preventDefault();
+    });
+
+    function onScroll(event){
+        var scrollPos = $(document).scrollTop();
+        $('header.header nav ul li.page a').each(function () {
+            $('body').removeClass('no-scroll');
+            $('.btn-menu-mobile').removeClass('open');
+            $('header.header nav').removeClass('show-menu');
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('header.header nav ul li.page').removeClass("active");
+                currLink.parent().addClass("active");
+            }
+            else {
+                currLink.parent().removeClass("active");
+            }
+        });
+    }
+
+    // Windows load
     $(window).load(function () {
         // Site loader 
 
@@ -14,15 +61,12 @@
 
     /* HEADER FIJO */
     $(window).scroll(function () {
-        if ($(window).width() > 768) {
-            if ($(document).scrollTop() > 60) {
-                $('header').addClass('fixed');
-            }
-            else {
-                $('header').removeClass('fixed');
-            }
+        if ($(document).scrollTop() > 60) {
+            $('header').addClass('fixed');
         }
-
+        else {
+            $('header').removeClass('fixed');
+        }
     });
 
     /* SCROLL BAR */
@@ -85,7 +129,10 @@
             mainmocaResize()
         }),
         $(window).resize(function() {
-            mainmocaResize()
+            mainmocaResize();
+            $('a.btn-menu-mobile').removeClass('open');
+            $('header.header nav').removeClass('show-menu');
+            $('body').removeClass('no-scroll');
         });
 
 

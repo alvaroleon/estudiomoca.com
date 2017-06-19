@@ -1358,19 +1358,21 @@ header nav ul li.active a:after{
   margin: 10px auto;
   width: 120px;
   position: relative;
+  overflow: hidden;
 }
 .logo-loader:before, .logo-loader:after{
   content: "";
   top: 0;
   position: absolute;
   height: 100%;
+  transform: skew(-37deg);
 }
 .logo-loader:before{
-  background-color: #612c84;
+  background-color: $second-color;
   width: 100%;
   left: 0;
   animation-name: loaderAnimColorA;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
   z-index: 1;
   animation-direction: alternate;
@@ -1381,7 +1383,7 @@ header nav ul li.active a:after{
   width: 0;
   right: 0;
   animation-name: loaderAnimColorB;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
@@ -1395,11 +1397,34 @@ header nav ul li.active a:after{
 
 @keyframes loaderAnimColorA{
   0%{width: 100%;}
+  50%{width: 0;}
   100%{width: 0;}
 }
 @keyframes loaderAnimColorB{
   0%{width: 0;}
+  50%{width: 100%;}
   100%{width: 100%;}
+}
+
+.btn-menu-mobile{
+  display: none;
+  width: 50px;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  span{
+    background-color: #F39409;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 3px;
+    margin-bottom: 3px;
+    transition: all 0.5s;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
 }
 
 
@@ -1638,7 +1663,7 @@ header nav ul li.active a:after{
   }
   .split-container {
     .img-content.radius {
-      border-radius: none;
+      border-radius: 0;
       margin-left: 0;
     }
     .background-img {
@@ -1665,7 +1690,84 @@ header nav ul li.active a:after{
   }
 }
 
+@media (max-width: 767px){
+  .btn-menu-mobile{
+    display: block;
+    &.open{
+      span{
+        &:nth-child(1){
+          transform: rotate(-45deg) translate(-17%,97%);
+        }
+        &:nth-child(2){
+          transform: rotate(46deg);
+        }
+        &:last-child{
+          opacity: 0;
+        }
+      }
+    }
+  }
+  header{
+    height: 75px;
+    &.fixed{
+      nav{
+        ul{
+          li{
+            a{
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    nav{
+      position: fixed;
+      background-color: $second-color;
+      height: calc(100vh - 75px);
+      left: 0;
+      top: 75px;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.3);
+      transition: all 0.5s;
+      &.show-menu{
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+      }
+      ul{
+        display: block;
+        margin: 0;
+        transform: translate(-50%,-50%);
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        li{
+          display: block;
+          text-align: center;
+          &.active{
+            a{
+              color: $main-color;
+            }
+          }
+          a{
+            color: #fff;
+            font-size: 1.4em;
+          }
+        }
+      }
+    }
+  }
+}
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  section{
+    &.moca{
+      .inner-moca {
+        padding-top: 250px;
+      }
+    }
+  }
   input, textarea {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
@@ -1715,7 +1817,7 @@ header nav ul li.active a:after{
     width: 100%;
   }
   .split-container .img-content.radius {
-    border-radius: none;
+    border-radius: 0;
     margin-left: 0;
   }
   .intro-content {
@@ -1824,9 +1926,27 @@ header nav ul li.active a:after{
   .contact-form .submit, .reply-form .submit {
     width: 100%;
   }
+  .moca-text {
+    top: 43%;
+  }
 }
 
 @media only screen and (max-width: 479px) {
+  .moca-text {
+    top: 43%;
+  }
+  section{
+    &.moca{
+      .inner-moca {
+        padding-top: 40px;
+      }
+    }
+  }
+  .moca-text{
+    h2 {
+      font-size: 2em;
+    }
+  }
   input, textarea {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
@@ -1883,7 +2003,7 @@ header nav ul li.active a:after{
   }
   .split-container {
     .img-content.radius {
-      border-radius: none;
+      border-radius: 0;
       margin-left: 0;
     }
     .background-img {
@@ -2055,6 +2175,9 @@ header nav ul li.active a:after{
 
 body {
   background-color: $main-color;
+  &.no-scroll{
+    overflow-y: hidden;
+  }
 }
 
 .arrows {

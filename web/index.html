@@ -3,7 +3,7 @@
 <head>
     <!-- Metas -->
     <meta charset="utf-8">
-    <title>MOCA - Estudio/Agencia de Marketing, Diseño y Desarrollo Digital.</title>
+    <title>MOCA - Estudio de Marketing, Diseño y Desarrollo Digital.</title>
     <meta name="description" content="">
     <link rel="icon" type="image/png" href="http://www.estudiomoca.com/favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,8 +38,8 @@
     <div class="inner-wrapper">
         <div class="mask-canvas"></div>
         <!--Offset navigation-->
-        <aside class="offest-nav-canvas ">
-            <!--Main navigation-->
+        <!--<aside class="offest-nav-canvas ">
+            &lt;!&ndash;Main navigation&ndash;&gt;
             <nav class="main-nav">
                 <ul class="menu">
                     <li><a href="index.html">Inicio</a></li>
@@ -48,36 +48,41 @@
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
-            <!--End main navigation-->
-            <!--Socials navigation-->
+            &lt;!&ndash;End main navigation&ndash;&gt;
+            &lt;!&ndash;Socials navigation&ndash;&gt;
             <div class="socials-nav">
                 <ul class="socials">
                     <li><a href="#" target="_blank"><i class="icon-facebook"></i></a></li>
                 </ul>
             </div>
-            <!--End socials navigation-->
-        </aside>
+            &lt;!&ndash;End socials navigation&ndash;&gt;
+        </aside>-->
         <!--End offset navigation-->
 
         <!--moca section-->
-        <section class="moca index">
+        <section id="inicio" class="moca index">
             <!--Header-->
             <header class="header">
                 <div class="logo left-part">
                     <h1>
-                        <a href="index.html">
+                        <a class="home" href="#inicio" title="Estudio MOCA">
                             <img alt="Estudio Moca - Marketing Digital, Desarrollo de Aplicaciones y Web" src="img/logo.png">
                         </a>
                     </h1>
                 </div>
+                <a class="btn-menu-mobile" href="#" title="Muestra el menú principal">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
 
                 <nav>
                     <ul>
-                        <li class="active"><a href="index.html">Inicio</a></li>
-                        <li><a href="#" title="Somos">Somos</a></li>
-                        <li><a href="#" title="Lo que hacemos">Lo que hacemos</a></li>
-                        <li><a href="#" title="Equipo">Equipo</a></li>
-                        <li><a href="#" title="Trabajos">Trabajos</a></li>
+                        <li class="page active"><a href="#inicio">Inicio</a></li>
+                        <li class="page"><a href="#somos" title="Somos">Somos</a></li>
+                        <li class="page"><a href="#lo-que-hacemos" title="Lo que hacemos">Lo que hacemos</a></li>
+                        <li class="page"><a href="#equipo" title="Equipo">Equipo</a></li>
+                        <li class="page"><a href="#portafolio" title="Portafolio">Portafolio</a></li>
                         <li><a href="mailto:hola@estudiomoca.com" title="Contacto">Contacto</a></li>
                     </ul>
                 </nav>
@@ -121,7 +126,7 @@
                                 pensamos en los usuarios sin perder el foco comercial.<span>|</span>
                             </p>
 
-                            <a class="but brd mt-40 pbutton" href="#">
+                            <a class="but brd mt-40 pbutton" href="mailto:hola@estudiomoca.com" title="hola@estudiomoca.com">
                                 <i class="fa fa-coffee" aria-hidden="true"></i>
 
                                 Conversemos
@@ -131,7 +136,7 @@
                     <!--End row-->
                 </div>
                 <!--End container-->
-                <a class="home-down" href="#descubrenos"><div class="arrows"></div></a>
+                <a class="home-down home" href="#somos"><div class="arrows"></div></a>
 
             </div>
             <!--End inner moca-->
@@ -139,7 +144,7 @@
         <!--End moca section-->
 
         <!--About  section-->
-        <section class="about pt-100 pb-20">
+        <section id="somos" class="about pt-100 pb-20">
             <!--Container-->
             <div class="container">
                 <!--Row-->
@@ -183,6 +188,12 @@
             </div>
             <!--End container-->
             <hr class="mt-100 mb-100">
+            <!--Container-->
+        </section>
+        <!--End about  section-->
+
+        <!--Quote section-->
+        <section id="lo-que-hacemos" class="quote quote-content pt-100 pb-100">
             <!--Container-->
             <div class="container">
                 <!--Row-->
@@ -298,16 +309,11 @@
                 <!--End row-->
             </div>
             <!--End container-->
-        </section>
-        <!--End about  section-->
 
-        <!--Quote section-->
-        <section class="quote quote-content text-center mt-80 mb-60">
-            <!--Container-->
             <div class="container">
                 <!--Row-->
                 <div class="row">
-                    <div class="quote-box">
+                    <div class="quote-box text-center">
                         <div class="col-md-12">
                             <a class="but opc mt-40 line" href="#">conversemos
                                 <span class="arrow left"><i class="icon-angle-right"></i></span></a>
@@ -345,7 +351,7 @@
             <!--End client  section-->
 
             <!--Equipo section-->
-            <section class="equipo pt-100 pb-100">
+            <section id="equipo" class="equipo pt-100 pb-100">
                <!--Container-->
                <div class="container">
                   <!--Row-->
@@ -432,7 +438,7 @@
             <!--End equipo  section-->
 
             <!--Portafolio section-->
-            <section class="portfolio bg-grey pt-100 pb-100">
+            <section id="portafolio" class="portfolio bg-grey pt-100 pb-100">
                <!--Container-->
                <div class="container">
                   <!--Row-->
@@ -563,7 +569,7 @@
                         </div>
                         <p class="mt-10">© 2017 Estudio Moca. Todos los derechos reservados.</p>
                         <ul class="socials mt-15">
-                           <li><a href="#" target="_blank"><i class="icon-facebook"></i></a></li>
+                           <li><a href="#" target="_blank"><i class="icon-linkedin"></i></a></li>
                         </ul>
                      </div>
                   </div>
