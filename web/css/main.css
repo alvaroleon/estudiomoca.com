@@ -1,3 +1,4 @@
+/*$main-color: $main-color;*/
 /*
 * 	Copyright 2017
 * 	www.estudiomoca.com
@@ -207,7 +208,7 @@ h1 {
 
 .moca-text h2 {
   font-size: 3em;
-  color: #F39409;
+  color: #ffb91c;
   line-height: 1.2em;
   letter-spacing: 1px;
   position: relative;
@@ -289,7 +290,7 @@ h1 {
   -webkit-border-radius: 4px 4px 0 0; }
 
 .intro-content {
-  background: #F39409;
+  background: #ffb91c;
   overflow: hidden;
   position: relative; }
   .intro-content.push-right {
@@ -351,7 +352,7 @@ h1 {
     width: 14%; }
 
 .plus-btn {
-  background: #F39409;
+  background: #ffb91c;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -367,7 +368,7 @@ h1 {
   text-align: center;
   top: -40px;
   width: 40px;
-  background: #F39409 none repeat scroll 0 0;
+  background: #ffb91c none repeat scroll 0 0;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -398,7 +399,7 @@ h1 {
 /*End about section*/
 /*Quote section*/
 .quote-content h4 {
-  color: #F39409;
+  color: #ffb91c;
   font-size: 20px; }
 .quote-content.img h4 {
   color: #ffffff; }
@@ -480,7 +481,7 @@ h1 {
   top: 82px;
   left: 50%; }
 .expertise-block i {
-  color: #F39409;
+  color: #ffb91c;
   display: block;
   font-size: 20px;
   margin-bottom: 10px; }
@@ -978,7 +979,7 @@ p.column {
   .footer .plus-btn {
     position: absolute;
     right: -10%;
-    top: -20px;
+    top: 20px;
     z-index: 100;
     opacity: 0;
     line-height: 38px; }
@@ -1024,7 +1025,7 @@ header progress {
   transition: all 0.5s; }
 
 header progress .progress-bar {
-  background-color: #f39409;
+  background-color: #ffb91c;
   width: 0;
   display: block;
   height: inherit; }
@@ -1033,10 +1034,10 @@ progress::-webkit-progress-bar {
   background-color: transparent; }
 
 progress::-webkit-progress-value {
-  background-color: #f39409; }
+  background-color: #ffb91c; }
 
 progress::-moz-progress-bar {
-  background-color: #f39409; }
+  background-color: #ffb91c; }
 
 header nav {
   float: right; }
@@ -1065,10 +1066,10 @@ header.fixed {
   transition: all 0.5s; }
 
 header nav ul li a:hover {
-  color: #f39409; }
+  color: #ffb91c; }
 
 header nav ul li.active a {
-  color: #f39409;
+  color: #ffb91c;
   font-weight: bold; }
 
 header nav ul li.active a:before, header nav ul li.active a:after {
@@ -1107,7 +1108,7 @@ header nav ul li.active a:after {
   animation-timing-function: ease-in-out; }
 
 .logo-loader:after {
-  background-color: #f39409;
+  background-color: #ffb91c;
   width: 0;
   right: 0;
   animation-name: loaderAnimColorB;
@@ -1144,7 +1145,7 @@ header nav ul li.active a:after {
   right: 10px;
   top: 20px; }
   .btn-menu-mobile span {
-    background-color: #F39409;
+    background-color: #ffb91c;
     display: block;
     width: 100%;
     height: 4px;
@@ -1405,7 +1406,7 @@ header nav ul li.active a:after {
           display: block;
           text-align: center; }
           header nav ul li.active a {
-            color: #F39409; }
+            color: #ffb91c; }
           header nav ul li a {
             color: #fff;
             font-size: 1.4em; } }
@@ -1696,8 +1697,8 @@ header nav ul li.active a:after {
   padding: 1em 2em;
   border-radius: 1em; }
   .pbutton.brd:hover, .pbutton.brd.yellow {
-    background-color: #F39409;
-    border-color: #F39409; }
+    background-color: #ffb91c;
+    border-color: #ffb91c; }
   .pbutton.brd i {
     padding-right: 10px !important; }
 
@@ -1723,7 +1724,7 @@ header nav ul li.active a:after {
 
 /*End media queries*/
 body {
-  background-color: #F39409; }
+  background-color: #ffb91c; }
   body.no-scroll {
     overflow-y: hidden; }
 
