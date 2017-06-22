@@ -27,7 +27,21 @@ $second-color: #6F2887;
 	17.Footer
 	18.Media queries
 /*Preloader*/
-
+body {
+  background-color: $main-color;
+  transition: all 0.5s;
+  &.no-scroll{
+    overflow-y: hidden;
+    .new-modal{
+      transform: translate(-50%, -50%) rotateX(0deg);
+      -webkit-transform: translate(-50%, -50%) rotateX(0deg);
+      -moz-transform: translate(-50%, -50%) rotateX(0deg);
+    }
+    #wrapper{
+      -webkit-filter: blur(4px);
+    }
+  }
+}
 .loader {
   background: #ffffff;
   height: 100%;
@@ -1856,6 +1870,12 @@ header nav ul li.active a:after{
 }
 
 @media (max-width: 767px){
+  body.no-scroll #wrapper {
+    -webkit-filter: blur(0);
+  }
+  header.fixed nav ul li.active a{
+    color: $main-color;
+  }
   .btn-menu-mobile{
     display: block;
     &.open{
@@ -1904,6 +1924,7 @@ header nav ul li.active a:after{
       ul{
         display: block;
         margin: 0;
+        width: 100%;
         transform: translate(-50%,-50%);
         position: absolute;
         left: 50%;
@@ -2337,22 +2358,6 @@ header nav ul li.active a:after{
 }
 
 /*End media queries*/
-
-body {
-  background-color: $main-color;
-  transition: all 0.5s;
-  &.no-scroll{
-    overflow-y: hidden;
-    .new-modal{
-      transform: translate(-50%, -50%) rotateX(0deg);
-      -webkit-transform: translate(-50%, -50%) rotateX(0deg);
-      -moz-transform: translate(-50%, -50%) rotateX(0deg);
-    }
-    #wrapper{
-      -webkit-filter: blur(4px);
-    }
-  }
-}
 
 
 .arrows {
