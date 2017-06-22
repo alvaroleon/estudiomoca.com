@@ -17,6 +17,17 @@
         }
     });
 
+    $('.btn-contact').on('click', function(event){
+        event.preventDefault();
+        $('.cover-modal').addClass('show-modal');
+        $('body').addClass('no-scroll');
+    });
+    $('.close-modal').on('click', function(event){
+        event.preventDefault();
+        $('.cover-modal').removeClass('show-modal');
+        $('body').removeClass('no-scroll');
+    });
+
     // SCROLLTO MENU
     $(document).on("scroll", onScroll);
 
@@ -133,6 +144,7 @@
             $('a.btn-menu-mobile').removeClass('open');
             $('header.header nav').removeClass('show-menu');
             $('body').removeClass('no-scroll');
+            $('.cover-modal').removeClass('show-modal');
         });
 
 
