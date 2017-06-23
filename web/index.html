@@ -533,22 +533,18 @@
             <img src="img/team/equipo.jpg" draggable="false" alt="Equipo Estudio MOCA">
             <a class="close-modal" rel="nofollow" href="#" aria-hidden="true" title="Cerrar"><i class="fa fa-code" aria-hidden="true"></i></a>
         </div>
-        <form action="" class="registration-form">
+        <form action="send.php" id="frm-send-form" class="registration-form">
             <label class="col-one-half">
                 <span class="label-text">Nombre</span>
-                <input type="text" name="firstName">
+                <input type="text" id="name" name="firstName" required>
             </label>
             <label class="col-one-half">
-                <span class="label-text">Apellido</span>
-                <input type="text" name="lastName">
-            </label>
-            <label>
                 <span class="label-text">Email</span>
-                <input type="text" name="email">
+                <input type="email" id="email" name="email" required>
             </label>
             <label class="textarea">
                 <span class="label-text">Mensaje</span>
-                <textarea></textarea>
+                <textarea id="message" required></textarea>
             </label>
             <div class="text-center">
                 <button class="submit" name="register">Enviar</button>
@@ -556,7 +552,6 @@
         </form>
     </div>
 </div>
-
       <!--Javascript-->
       <script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>
       <script src="js/owl.carousel.js" type="text/javascript"></script>

@@ -249,10 +249,12 @@
     var inputName = $('input#name');
     var inputEmail = $('input#email');
     var textArea = $('textarea#message');
-    var contactForm = $('.contact-form');
+    var contactForm = $('#frm-send-form');
 
 
     $('.submit').on("click", function () {
+
+        console.log('Ok');
 
         inputName.removeClass("errorForm");
         textArea.removeClass("errorForm");
@@ -284,6 +286,8 @@
         }
 
         if (error === true) {
+            $('.error').fadeIn('slow');
+            console.log("Error");
             return false;
         }
 
