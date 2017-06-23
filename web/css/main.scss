@@ -1222,9 +1222,9 @@ p.column {
   color: #767676;
 }
 
-.errorForm {
+/*.errorForm {
   border: 2px solid #387bcc !important;
-}
+}*/
 
 /*End contact section*/
 
@@ -1419,6 +1419,9 @@ progress::-moz-progress-bar {
     margin-bottom: 0.5em;
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
+    &.errorForm{
+      border-bottom: 1px red solid;
+    }
   }
   form label.col-one-half{
     float: left;
@@ -1437,6 +1440,8 @@ progress::-moz-progress-bar {
     width: 100%;
     color: #000;
     resize: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
   }
   form label input:focus, form label textarea:focus{
     outline: none;

@@ -980,9 +980,9 @@ p.column {
 .success h2 {
   color: #767676; }
 
-.errorForm {
-  border: 2px solid #387bcc !important; }
-
+/*.errorForm {
+  border: 2px solid #387bcc !important;
+}*/
 /*End contact section*/
 /*Footer*/
 .footer {
@@ -1153,6 +1153,8 @@ progress::-moz-progress-bar {
     margin-bottom: 0.5em;
     -webkit-transition: all 0.25s;
     transition: all 0.25s; }
+    .new-modal form label.errorForm {
+      border-bottom: 1px red solid; }
   .new-modal form label.col-one-half {
     float: left;
     width: 50%; }
@@ -1167,7 +1169,9 @@ progress::-moz-progress-bar {
     padding: 0.5em 0.25em;
     width: 100%;
     color: #000;
-    resize: none; }
+    resize: none;
+    box-shadow: none;
+    -webkit-box-shadow: none; }
   .new-modal form label input:focus, .new-modal form label textarea:focus {
     outline: none; }
   .new-modal form label input:-webkit-autofill {
