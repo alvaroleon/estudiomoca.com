@@ -962,6 +962,11 @@ p.column {
   display: none;
   position: relative; }
 
+.alert-success {
+  background-color: rgba(111, 40, 135, 0.2);
+  color: #6F2887;
+  border-color: #6F2887; }
+
 .success h2 {
   font-size: 11px;
   left: 0;
@@ -1148,13 +1153,22 @@ progress::-moz-progress-bar {
     width: 1em; }
   .new-modal form label {
     border-bottom: 1px solid #333;
-    display: block;
+    display: table;
     font-size: 1.25em;
     margin-bottom: 0.5em;
     -webkit-transition: all 0.25s;
-    transition: all 0.25s; }
+    transition: all 0.25s;
+    position: relative;
+    width: 100%; }
     .new-modal form label.errorForm {
-      border-bottom: 1px red solid; }
+      border-bottom: 1px #b70000 solid; }
+      .new-modal form label.errorForm:after {
+        content: "Este campo es requerido.";
+        color: #b70000;
+        font-size: 12px;
+        position: absolute;
+        right: 0px;
+        top: 3px; }
   .new-modal form label.col-one-half {
     float: left;
     width: 50%; }

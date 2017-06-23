@@ -1200,6 +1200,11 @@ p.column {
   display: none;
   position: relative;
 }
+.alert-success{
+  background-color: rgba($second-color, .2);
+  color: $second-color;
+  border-color: $second-color;
+}
 
 .success h2 {
   font-size: 11px;
@@ -1414,13 +1419,23 @@ progress::-moz-progress-bar {
 
   form label{
     border-bottom: 1px solid #333;
-    display: block;
+    display: table;
     font-size: 1.25em;
     margin-bottom: 0.5em;
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
+    position: relative;
+    width: 100%;
     &.errorForm{
-      border-bottom: 1px red solid;
+      border-bottom: 1px #b70000 solid;
+      &:after{
+        content: "Este campo es requerido.";
+        color: #b70000;
+        font-size: 12px;
+        position: absolute;
+        right: 0px;
+        top: 3px;
+      }
     }
   }
   form label.col-one-half{
