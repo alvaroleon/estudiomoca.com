@@ -305,7 +305,6 @@
                     $('.error').fadeIn('slow');
                 }
             }
-
         });
 
         return false;
