@@ -247,26 +247,37 @@
     // Form validation 
 
     var inputName = $('input#name');
+    var inputSubject = $('input#subject');
     var inputEmail = $('input#email');
     var textArea = $('textarea#message');
     var contactForm = $('#frm-send-form');
 
+    $('.registration-form input, .registration-form textarea').blur(function(){
+        $(this).parent().removeClass("errorForm");
+    });
 
     $('.submit').on("click", function () {
 
         console.log('Ok');
 
-        inputName.removeClass("errorForm");
-        textArea.removeClass("errorForm");
-        inputEmail.removeClass("errorForm");
+        inputName.parent().removeClass("errorForm");
+        textArea.parent().removeClass("errorForm");
+        inputSubject.parent().removeClass("errorForm");
+        inputEmail.parent().removeClass("errorForm");
 
         var error = false;
         var name = inputName.val();
+        var subject = inputSubject.val();
+
         if (name === "" || name === " ") {
             error = true;
             inputName.parent().addClass("errorForm");
         }
 
+        if (subject === "" || subject === " ") {
+            error = true;
+            inputSubject.parent().addClass("errorForm");
+        }
 
         var msg = textArea.val();
         if (msg === "" || msg === " ") {
