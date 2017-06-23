@@ -264,24 +264,24 @@
         var name = inputName.val();
         if (name === "" || name === " ") {
             error = true;
-            inputName.addClass("errorForm");
+            inputName.parent().addClass("errorForm");
         }
 
 
         var msg = textArea.val();
         if (msg === "" || msg === " ") {
             error = true;
-            textArea.addClass("errorForm");
+            textArea.parent().addClass("errorForm");
 
         }
 
         var email_compare = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
         var email = inputEmail.val();
         if (email === "" || email === " ") {
-            inputEmail.addClass("errorForm");
+            inputEmail.parent().addClass("errorForm");
             error = true;
         } else if (!email_compare.test(email)) {
-            inputEmail.addClass("errorForm");
+            inputEmail.parent().addClass("errorForm");
             error = true;
         }
 
