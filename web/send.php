@@ -1,6 +1,6 @@
 <?php
-/*ini_set('display_errors', 1);
-error_reporting(E_ALL);*/
+ini_set('display_errors', 0);
+error_reporting(0);
 
 $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
@@ -40,7 +40,7 @@ $msg .= "User come from : " . $_SERVER["SERVER_NAME"] . "\r\n";
 
 $recipient = "hola@estudiomoca.com";// Change the recipient email adress to your adrees
 $sujet = "Contacto Estudio Moca";
-$mailheaders = "From: $email\r\nReturn-Path: $email\r\n";
+$mailheaders = "From: <hola@estudiomoca.com>\r\nReturn-Path: $email\r\n";
 
 $sending = mail($recipient, $sujet, $msg, $mailheaders);
 

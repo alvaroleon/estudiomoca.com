@@ -257,9 +257,6 @@
     });
 
     $('.submit').on("click", function () {
-
-        console.log('Ok');
-
         inputName.parent().removeClass("errorForm");
         textArea.parent().removeClass("errorForm");
         inputSubject.parent().removeClass("errorForm");
@@ -298,11 +295,13 @@
 
         if (error === true) {
             $('.error').fadeIn('slow');
+            $('.success').hide();
             console.log("Error");
             return false;
         }
 
         var data_string = contactForm.serialize();
+        $('.success, .error').hide();
 
         $.ajax({
             type: "POST",
@@ -310,9 +309,11 @@
             data: data_string,
 
             success: function (message) {
-                if (message === 'SENDING') {
+                if (message.type === 'info') {
+                    $('.error').hide();
                     $('.success').fadeIn('slow');
                 } else {
+                    $('.success').hide();
                     $('.error').fadeIn('slow');
                 }
             }
