@@ -144,7 +144,7 @@
             $('a.btn-menu-mobile').removeClass('open');
             $('header.header nav').removeClass('show-menu');
             $('body').removeClass('no-scroll');
-            $('.cover-modal').removeClass('show-modal');
+            //$('.cover-modal').removeClass('show-modal');
         });
 
 

@@ -1431,10 +1431,10 @@ progress::-moz-progress-bar {
       &:after{
         content: "Este campo es requerido.";
         color: #b70000;
-        font-size: 12px;
+        font-size: 10px;
         position: absolute;
-        right: 0px;
-        top: 3px;
+        left: 4px;
+        top: 15px;
       }
     }
   }

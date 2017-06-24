@@ -1165,10 +1165,10 @@ progress::-moz-progress-bar {
       .new-modal form label.errorForm:after {
         content: "Este campo es requerido.";
         color: #b70000;
-        font-size: 12px;
+        font-size: 10px;
         position: absolute;
-        right: 0px;
-        top: 3px; }
+        left: 4px;
+        top: 15px; }
   .new-modal form label.col-one-half {
     float: left;
     width: 50%; }
