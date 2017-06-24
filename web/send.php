@@ -1,22 +1,31 @@
 <?php
-ini_set('display_errors', false);
+/*ini_set('display_errors', 1);
+error_reporting(E_ALL);*/
 
 $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
 $subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
 $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
-$error = "";
+$isError = false;
 $errorMessage = 'En estos momentos no podemos enviar tu mensaje, por favor, intentalo más tarde.';
 
 //Validate first
 if (empty($name) || empty($email) || empty($message)) {
-    echo "Debes ingresar tu nombre, email y mensaje.";
-    header('Location: /');
+    http_response_code(400);
+
+    echo json_encode([
+        'type' => 'error', 'msg' => 'Debes ingresar tu nombre, email y mensaje.'
+    ]);
+    exit;
 }
 //validate against any email injection attempts
 if (IsInjected($email)) {
-    echo "Debe";
-    header('Location: /');
+    http_response_code(400);
+
+    echo json_encode([
+        'type' => 'error', 'msg' => 'El email ingresado no es válido.'
+    ]);
+    exit;
 }
 
 $msg = "Name : $name\r\n";
@@ -31,24 +40,21 @@ $msg .= "User come from : " . $_SERVER["SERVER_NAME"] . "\r\n";
 
 $recipient = "hola@estudiomoca.com";// Change the recipient email adress to your adrees
 $sujet = "Contacto Estudio Moca";
-$mailheaders = "From: $email\r\nReply-To: $email\r\nReturn-Path: $email\r\n";
+$mailheaders = "From: $email\r\nReturn-Path: $email\r\n";
 
-if (!$error) {
-    $sending = mail($recipient, $sujet, $msg, $mailheaders);
+$sending = mail($recipient, $sujet, $msg, $mailheaders);
 
-    if ($sending) {
-        header('Content-Type: application/json');
+if ($sending) {
+    header('Content-Type: application/json');
 
-        echo json_encode([
-            'Hemos recibido tu mensaje, nos contactaremos pronto.'
-        ]);
-    } else {
-        http_response_code(400);
-        echo json_encode([['type' => 'error'],['msg' =>$errorMessage]]);
-    }
+    echo json_encode([
+        'type' => 'info', 'msg' => 'Hemos recibido tu mensaje, nos contactaremos pronto.'
+    ]);
+    exit;
 } else {
-    http_response_code(400);
-    echo json_encode([['type' => 'error'],['msg' =>$error]]);
+    http_response_code(500);
+    echo json_encode(['type' => 'error', 'msg' => $errorMessage]);
+    exit;
 }
 
 // Function to validate against any email injection attempts

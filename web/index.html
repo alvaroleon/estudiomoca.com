@@ -535,7 +535,7 @@
         <form action="send.php" id="frm-send-form" class="registration-form">
             <label class="col-one-half">
                 <span class="label-text">Nombre</span>
-                <input type="text" id="name" name="firstName" required>
+                <input type="text" id="name" name="name" required>
             </label>
             <label class="col-one-half">
                 <span class="label-text">Email</span>
@@ -547,13 +547,13 @@
             </label>
             <label class="textarea">
                 <span class="label-text">Mensaje</span>
-                <textarea id="message" required></textarea>
+                <textarea id="message" name="message" required></textarea>
             </label>
             <div class="alert alert-success success">
                 <p>Nos contáctaremos contigo, atento a tu correo ;)</p>
             </div>
             <div class="alert alert-warning error">
-                <p>Tu mensaje no ha podido ser enviado :( intenta nuevamente</p>
+                <p>Tu mensaje no ha podido ser enviado :( intenta nuevamente más tarde.</p>
             </div>
             <div class="text-center">
                 <button class="submit" name="register">Enviar</button>
