@@ -28,7 +28,7 @@ $second-color: #6F2887;
 	18.Media queries
 /*Preloader*/
 body {
-  background-color: $main-color;
+  background-color: $second-color;
   transition: all 0.5s;
   &.no-scroll{
     overflow-y: hidden;

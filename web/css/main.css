@@ -25,7 +25,7 @@
 	18.Media queries
 /*Preloader*/
 body {
-  background-color: #ffb91c;
+  background-color: #6F2887;
   transition: all 0.5s; }
   body.no-scroll {
     overflow-y: hidden; }
