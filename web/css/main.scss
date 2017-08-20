@@ -28,20 +28,21 @@ $second-color: #6F2887;
 	18.Media queries
 /*Preloader*/
 body {
-  background-color: $main-color;
+  background-color: $second-color;
   transition: all 0.5s;
-  &.no-scroll{
+  &.no-scroll {
     overflow-y: hidden;
-    .new-modal{
+    .new-modal {
       transform: translate(-50%, -50%) rotateX(0deg);
       -webkit-transform: translate(-50%, -50%) rotateX(0deg);
       -moz-transform: translate(-50%, -50%) rotateX(0deg);
     }
-    #wrapper{
+    #wrapper {
       -webkit-filter: blur(4px);
     }
   }
 }
+
 .loader {
   background: #ffffff;
   height: 100%;
@@ -60,6 +61,8 @@ body {
   width: 100%;
   opacity: .9;
   text-align: center;
+  margin-top: -70px;
+  
   h4 {
     color: #333333;
     font-size: 13px;
@@ -1200,7 +1203,8 @@ p.column {
   display: none;
   position: relative;
 }
-.alert-success{
+
+.alert-success {
   background-color: rgba($second-color, .2);
   color: $second-color;
   border-color: $second-color;
@@ -1264,10 +1268,8 @@ p.column {
 
 /*End footer*/
 
-
-
 /* AJUSTES 15/06 */
-header{
+header {
   position: fixed;
   left: 0;
   top: 0;
@@ -1275,7 +1277,8 @@ header{
   transition: all 0.5s;
   width: 100%;
 }
-header progress{
+
+header progress {
   display: block;
   height: 3px;
   width: 100%;
@@ -1296,24 +1299,28 @@ header progress{
   opacity: 0;
   transition: all 0.5s;
 }
+
 header progress .progress-bar {
   background-color: $main-color;
   width: 0;
   display: block;
   height: inherit;
 }
+
 progress::-webkit-progress-bar {
   background-color: transparent;
 }
+
 progress::-webkit-progress-value {
   background-color: $main-color;
 }
+
 progress::-moz-progress-bar {
   background-color: $main-color;
 }
 
 /* MODAL */
-.cover-modal{
+.cover-modal {
   /*background: rgba(0,0,0,0.9);*/
   background: rgba($main-color, .8);
   content: '';
@@ -1329,29 +1336,30 @@ progress::-moz-progress-bar {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
-  &.show-modal{
+  &.show-modal {
     opacity: 1;
     visibility: visible;
   }
 }
-.new-modal{
+
+.new-modal {
   border-radius: 5px;
   box-shadow: 0 0 220px 0 darken($main-color, 20%);
   display: block;
   max-width: 480px;
   overflow: hidden;
-  -webkit-transform: translate(-50%,-50%) rotateX(30deg);
-  -ms-transform: translate(-50%,-50%) rotateX(30deg);
-  transform: translate(-50%,-50%) rotateX(30deg);
+  -webkit-transform: translate(-50%, -50%) rotateX(0deg);
+  -ms-transform: translate(-50%, -50%) rotateX(0deg);
+  transform: translate(-50%, -50%) rotateX(0deg);
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 11;
   width: 98%;
-  background-color: rgba(256,256,256,0.97);
+  background-color: rgba(256, 256, 256, 0.97);
   transition: all 0.5s;
-  .head-modal{
-    .close-modal{
+  .head-modal {
+    .close-modal {
       position: absolute;
       right: 0;
       top: 0;
@@ -1359,15 +1367,15 @@ progress::-moz-progress-bar {
       font-size: 18px;
       padding: 10px;
     }
-    img{
+    img {
       display: block;
       width: 100%;
     }
   }
-  form{
+  form {
     padding: 2em;
   }
-  form button.submit{
+  form button.submit {
     background: $main-color;
     border: none;
     line-height: 1em;
@@ -1383,30 +1391,38 @@ progress::-moz-progress-bar {
     font-weight: 700;
     -webkit-border-radius: 40px;
     font-family: 'Montserrat-Regular', "Helvetica", "Arial", sans-serif;
-    &:hover{
+    &:hover {
       transform: scale(1.1);
     }
   }
   form button:hover,
   form button:focus,
   form button:active,
-  form button.loading{
+  form button.loading {
     outline: none;
   }
-  form button.success{
+  form button.success {
     background: #27ae60;
     border-color: #27ae60;
     color: #fff;
   }
-  @-webkit-keyframes spin{
-    from{ transform: rotate(0deg); }
-    to{ transform: rotate(360deg); }
+  @-webkit-keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
-  @keyframes spin{
-    from{ transform: rotate(0deg); }
-    to{ transform: rotate(360deg); }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
-  form button span.loading-spinner{
+  form button span.loading-spinner {
     -webkit-animation: spin 0.5s linear infinite;
     animation: spin 0.5s linear infinite;
     border: 2px solid #fff;
@@ -1417,7 +1433,7 @@ progress::-moz-progress-bar {
     width: 1em;
   }
 
-  form label{
+  form label {
     border-bottom: 1px solid #333;
     display: table;
     font-size: 1.25em;
@@ -1426,9 +1442,10 @@ progress::-moz-progress-bar {
     transition: all 0.25s;
     position: relative;
     width: 100%;
-    &.errorForm{
+
+    &.errorForm {
       border-bottom: 1px #b70000 solid;
-      &:after{
+      &:after {
         content: "Este campo es requerido.";
         color: #b70000;
         font-size: 10px;
@@ -1438,15 +1455,25 @@ progress::-moz-progress-bar {
       }
     }
   }
-  form label.col-one-half{
+
+  .captcha {
+    display: table;
+    margin-bottom: 2em;
+    position: relative;
+    width: 100%;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+  }
+
+  form label.col-one-half {
     float: left;
     width: 50%;
   }
-  form label.col-one-half:nth-of-type(even){
+  form label.col-one-half:nth-of-type(even) {
     border-left: 1px solid #333;
     padding-left: 0.25em;
   }
-  form label input, form label textarea{
+  form label input, form label textarea {
     background: none;
     border: none;
     line-height: 1em;
@@ -1458,75 +1485,79 @@ progress::-moz-progress-bar {
     box-shadow: none;
     -webkit-box-shadow: none;
   }
-  form label input:focus, form label textarea:focus{
+  form label input:focus, form label textarea:focus {
     outline: none;
   }
-  form label input:-webkit-autofill{
+  form label input:-webkit-autofill {
     background-color: transparent !important;
   }
-  form label span.label-text{
+  form label span.label-text {
     display: block;
     font-size: 0.9em;
     padding-left: 0.5em;
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
   }
-  form label.checkbox{
+  form label.checkbox {
     border-bottom: 0;
     text-align: center;
   }
-  form label.invalid{border-color: #c0392b !important;}
-  form label.invalid span.label-text{color: #c0392b;}
-  form label.textarea{position: relative;}
+  form label.invalid {
+    border-color: #c0392b !important;
+  }
+  form label.invalid span.label-text {
+    color: #c0392b;
+  }
+  form label.textarea {
+    position: relative;
+  }
 
 }
 
-
-
-header{
-  nav{
+header {
+  nav {
     float: right;
-    ul{
+    ul {
       display: table;
       margin: 20px 50px 20px 0;
-      li{
+      li {
         display: table-cell;
-        &.active{
-          a{
+        &.active {
+          a {
             color: $main-color;
             font-weight: bold;
           }
         }
-        a{
+        a {
           padding: 10px;
           display: block;
           color: #fff;
           text-decoration: none;
           transition: all 0.5s;
-          &:hover{
+          &:hover {
             color: $main-color;
           }
         }
       }
     }
   }
-  &.fixed{
+  &.fixed {
     /*background-color: rgba(243, 148,9,0.9);*/
-    background-color: rgba(256,256,256,0.99);
-    progress{
+    background-color: rgba(256, 256, 256, 0.99);
+    progress {
       opacity: 1;
     }
-    nav{
-      ul{
-        li{
-          &.active{
-            a{
+    nav {
+      ul {
+        li {
+          &.active {
+            a {
               color: $second-color;
             }
           }
-          a{
+          a {
             color: #333;
-            &:hover{
+            &:hover {
               color: $second-color;
             }
           }
@@ -1535,38 +1566,45 @@ header{
     }
   }
 }
-.header{
-  .logo{
+
+.header {
+  .logo {
     height: auto;
     margin-top: 0;
     transition: all 0.5s;
   }
 }
-header nav ul li.active a:before, header nav ul li.active a:after{
+
+header nav ul li.active a:before, header nav ul li.active a:after {
   display: inline-block;
 }
-header nav ul li.active a:before{
+
+header nav ul li.active a:before {
   content: "<";
   margin-right: 5px;
 }
-header nav ul li.active a:after{
+
+header nav ul li.active a:after {
   content: "/>";
   margin-left: 3px;
 }
-.logo-loader{
+
+.logo-loader {
   margin: 10px auto;
   width: 120px;
   position: relative;
   overflow: hidden;
 }
-.logo-loader:before, .logo-loader:after{
+
+.logo-loader:before, .logo-loader:after {
   content: "";
   top: 0;
   position: absolute;
   height: 100%;
   transform: skew(-37deg);
 }
-.logo-loader:before{
+
+.logo-loader:before {
   background-color: $second-color;
   width: 100%;
   left: 0;
@@ -1577,7 +1615,8 @@ header nav ul li.active a:after{
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
-.logo-loader:after{
+
+.logo-loader:after {
   background-color: $main-color;
   width: 0;
   right: 0;
@@ -1587,32 +1626,46 @@ header nav ul li.active a:after{
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
-.logo-loader img{
+
+.logo-loader img {
   display: block;
   width: 100%;
   position: relative;
   z-index: 3;
 }
 
-@keyframes loaderAnimColorA{
-  0%{width: 100%;}
-  50%{width: 0;}
-  100%{width: 0;}
-}
-@keyframes loaderAnimColorB{
-  0%{width: 0;}
-  50%{width: 100%;}
-  100%{width: 100%;}
+@keyframes loaderAnimColorA {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
 }
 
-.btn-menu-mobile{
+@keyframes loaderAnimColorB {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.btn-menu-mobile {
   display: none;
   width: 50px;
   padding: 10px;
   position: absolute;
   right: 10px;
   top: 20px;
-  span{
+  span {
     background-color: $main-color;
     display: block;
     width: 100%;
@@ -1620,12 +1673,11 @@ header nav ul li.active a:after{
     border-radius: 3px;
     margin-bottom: 3px;
     transition: all 0.5s;
-    &:last-child{
+    &:last-child {
       margin-bottom: 0;
     }
   }
 }
-
 
 /*Media queries*/
 
@@ -1889,43 +1941,43 @@ header nav ul li.active a:after{
   }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
   body.no-scroll #wrapper {
     -webkit-filter: blur(0);
   }
-  header.fixed nav ul li.active a{
+  header.fixed nav ul li.active a {
     color: $main-color;
   }
-  .btn-menu-mobile{
+  .btn-menu-mobile {
     display: block;
-    &.open{
-      span{
-        &:nth-child(1){
-          transform: rotate(-45deg) translate(-17%,97%);
+    &.open {
+      span {
+        &:nth-child(1) {
+          transform: rotate(-45deg) translate(-17%, 97%);
         }
-        &:nth-child(2){
+        &:nth-child(2) {
           transform: rotate(46deg);
         }
-        &:last-child{
+        &:last-child {
           opacity: 0;
         }
       }
     }
   }
-  header{
+  header {
     height: 75px;
-    &.fixed{
-      nav{
-        ul{
-          li{
-            a{
+    &.fixed {
+      nav {
+        ul {
+          li {
+            a {
               color: #fff;
             }
           }
         }
       }
     }
-    nav{
+    nav {
       position: fixed;
       background-color: $second-color;
       height: calc(100vh - 75px);
@@ -1936,28 +1988,28 @@ header nav ul li.active a:after{
       visibility: hidden;
       transform: scale(1.3);
       transition: all 0.5s;
-      &.show-menu{
+      &.show-menu {
         opacity: 1;
         visibility: visible;
         transform: scale(1);
       }
-      ul{
+      ul {
         display: block;
         margin: 0;
         width: 100%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         position: absolute;
         left: 50%;
         top: 45%;
-        li{
+        li {
           display: block;
           text-align: center;
-          &.active{
-            a{
+          &.active {
+            a {
               color: $main-color;
             }
           }
-          a{
+          a {
             color: #fff;
             font-size: 1.4em;
           }
@@ -1966,9 +2018,10 @@ header nav ul li.active a:after{
     }
   }
 }
+
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-  section{
-    &.moca{
+  section {
+    &.moca {
       .inner-moca {
         padding-top: 250px;
       }
@@ -2141,14 +2194,14 @@ header nav ul li.active a:after{
   .moca-text {
     top: 43%;
   }
-  section{
-    &.moca{
+  section {
+    &.moca {
       .inner-moca {
         padding-top: 40px;
       }
     }
   }
-  .moca-text{
+  .moca-text {
     h2 {
       font-size: 2em;
     }
@@ -2379,7 +2432,6 @@ header nav ul li.active a:after{
 
 /*End media queries*/
 
-
 .arrows {
   position: absolute;
   bottom: 3%;
@@ -2431,4 +2483,26 @@ header nav ul li.active a:after{
     border-bottom: 26.66667px solid transparent;
     transform: translate(-13.33333px, 53.33333px) rotate(-45deg);
   }
+}
+
+.loading-modal {
+  background: rgba(255, 255, 255, 0.7) url(../img/loading.svg) center center no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 99999;
+}
+
+//Da color a la selección de texto
+::-moz-selection {
+  color: #fff;
+  background: $second-color;
+}
+
+::selection {
+  color: #fff;
+  background: $second-color;
 }

@@ -1,28 +1,25 @@
-(function ($) {
-    "use strict";
-
-
+jQuery(function ($) {
     // MENU MOBILE
-    $('a.btn-menu-mobile').on('click', function(event) {
+    $('a.btn-menu-mobile').on('click', function (event) {
         event.preventDefault();
-        if($(this).hasClass('open')){
+        if ($(this).hasClass('open')) {
             $('body').removeClass('no-scroll');
             $(this).removeClass('open');
             $('header.header nav').removeClass('show-menu');
         }
-        else{
+        else {
             $('body').addClass('no-scroll');
             $(this).addClass('open');
             $('header.header nav').addClass('show-menu');
         }
     });
 
-    $('.btn-contact').on('click', function(event){
+    $('.btn-contact').on('click', function (event) {
         event.preventDefault();
         $('.cover-modal').addClass('show-modal');
         $('body').addClass('no-scroll');
     });
-    $('.close-modal').on('click', function(event){
+    $('.close-modal').on('click', function (event) {
         event.preventDefault();
         $('.cover-modal').removeClass('show-modal');
         $('body').removeClass('no-scroll');
@@ -32,18 +29,19 @@
     $(document).on("scroll", onScroll);
 
     //smoothscroll
-    $('header.header nav ul li.page a').on('click', function(event) {
+    $('header.header nav ul li.page a').on('click', function (event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top +20
+            scrollTop: $($anchor.attr('href')).offset().top + 20
         }, 500);
         //$('header.header nav ul li').removeClass('active');
         //$(this).parent().addClass('active');
         event.preventDefault();
     });
 
-    function onScroll(event){
+    function onScroll() {
         var scrollPos = $(document).scrollTop();
+
         $('header.header nav ul li.page a').each(function () {
             $('body').removeClass('no-scroll');
             $('.btn-menu-mobile').removeClass('open');
@@ -81,49 +79,51 @@
     });
 
     /* SCROLL BAR */
-    $(window).on('load', function(){
-        var getMax = function(){
+    $(window).on('load', function () {
+        var getMax = function () {
             return $(document).height() - $(window).height();
-        }
-        var getValue = function(){
+        };
+
+        var getValue = function () {
             return $(window).scrollTop();
-        }
-        if('max' in document.createElement('progress')){
+        };
+
+        var progressBar = $('progress');
+
+        if ('max' in document.createElement('progress')) {
             // Browser supports progress element
-            var progressBar = $('progress');
 
             // Set the Max attr for the first time
-            progressBar.attr({ max: getMax() });
+            progressBar.attr({max: getMax()});
 
-            $(document).on('scroll', function(){
+            $(document).on('scroll', function () {
                 // On scroll only Value attr needs to be calculated
-                progressBar.attr({ value: getValue() });
+                progressBar.attr({value: getValue()});
             });
 
-            $(window).resize(function(){
+            $(window).resize(function () {
                 // On resize, both Max/Value attr needs to be calculated
-                progressBar.attr({ max: getMax(), value: getValue() });
+                progressBar.attr({max: getMax(), value: getValue()});
             });
         }
         else {
-            var progressBar = $('progress'),
-                max = getMax(),
+            var max = getMax(),
                 value, width;
 
-            var getWidth = function(){
+            var getWidth = function () {
                 // Calculate width in percentage
                 value = getValue();
-                width = (value/max) * 100;
+                width = (value / max) * 100;
                 width = width + '%';
                 return width;
-            }
+            };
 
-            var setWidth = function(){
-                progressBar.css({ width: getWidth() });
-            }
+            var setWidth = function () {
+                progressBar.css({width: getWidth()});
+            };
 
             $(document).on('scroll', setWidth);
-            $(window).on('resize', function(){
+            $(window).on('resize', function () {
                 // Need to reset the Max attr
                 max = getMax();
                 setWidth();
@@ -136,21 +136,20 @@
         $(".moca.index").css('height', $(window).height());
     }
 
-    $(function() {
-            mainmocaResize()
-        }),
-        $(window).resize(function() {
-            mainmocaResize();
-            $('a.btn-menu-mobile').removeClass('open');
-            $('header.header nav').removeClass('show-menu');
-            $('body').removeClass('no-scroll');
-            //$('.cover-modal').removeClass('show-modal');
-        });
+    $(function () {
+        mainmocaResize()
+    });
 
-
+    $(window).resize(function () {
+        mainmocaResize();
+        $('a.btn-menu-mobile').removeClass('open');
+        $('header.header nav').removeClass('show-menu');
+        $('body').removeClass('no-scroll');
+        //$('.cover-modal').removeClass('show-modal');
+    });
     // Site navigation setup
 
-    $(".toggle-navigation a, .mask-canvas").on("click", function() {
+    $(".toggle-navigation a, .mask-canvas").on("click", function () {
 
         $(".toggle-navigation").toggleClass("active");
         $('.offest-nav-canvas ').toggleClass('show-nav');
@@ -243,7 +242,6 @@
 
     });
 
-
     // Form validation 
 
     var inputName = $('input#name');
@@ -252,7 +250,7 @@
     var textArea = $('textarea#message');
     var contactForm = $('#frm-send-form');
 
-    $('.registration-form input, .registration-form textarea').blur(function(){
+    $('.registration-form input, .registration-form textarea').blur(function () {
         $(this).parent().removeClass("errorForm");
     });
 
@@ -263,8 +261,8 @@
         inputEmail.parent().removeClass("errorForm");
 
         var error = false;
-        var name = inputName.val();
-        var subject = inputSubject.val();
+        var name = $.trim(inputName.val());
+        var subject = $.trim(inputSubject.val());
 
         if (name === "" || name === " ") {
             error = true;
@@ -276,15 +274,16 @@
             inputSubject.parent().addClass("errorForm");
         }
 
-        var msg = textArea.val();
+        var msg = $.trim(textArea.val());
+
         if (msg === "" || msg === " ") {
             error = true;
             textArea.parent().addClass("errorForm");
-
         }
 
         var email_compare = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-        var email = inputEmail.val();
+        var email = $.trim(inputEmail.val());
+
         if (email === "" || email === " ") {
             inputEmail.parent().addClass("errorForm");
             error = true;
@@ -295,13 +294,11 @@
 
         if (error === true) {
             $('.error').fadeIn('slow');
-            $('.success').hide();
-            console.log("Error");
             return false;
         }
 
         var data_string = contactForm.serialize();
-        $('.success, .error').hide();
+        $('.loading-modal').fadeIn('fast');
 
         $.ajax({
             type: "POST",
@@ -309,13 +306,20 @@
             data: data_string,
 
             success: function (message) {
-                if (message.type === 'info') {
-                    $('.error').hide();
-                    $('.success').fadeIn('slow');
-                } else {
-                    $('.success').hide();
-                    $('.error').fadeIn('slow');
-                }
+                /** @namespace message.msg */
+                $('.loading-modal').fadeOut('fast');
+
+                $('.alert-success.success p').text(message.msg);
+                $('.success').fadeIn('slow');
+                $('.error').fadeOut('fast');
+            },
+
+            error: function (jqXHR, textStatus, errorThrown) {
+                $('.alert-warning.error p').text(jqXHR.responseJSON.msg);
+                $('.loading-modal').fadeOut('fast');
+
+                $('.error').fadeIn('slow');
+                $('.success').fadeOut('fast');
             }
         });
 
@@ -330,4 +334,4 @@
         }, 500);
     });
 
-})(jQuery);
+});

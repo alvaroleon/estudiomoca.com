@@ -1,20 +1,43 @@
 <?php
+require 'recaptchalib.php';
+
 ini_set('display_errors', 0);
 error_reporting(0);
+
+$errorMessage = 'Tu mensaje no ha podido ser enviado :( intenta nuevamente más tarde.';
+header('Content-Type: application/json');
+
+$secret = "6LfLhi0UAAAAANs4XbxYo1efyLVsMnUTtS3ov6M9";
+$response = null;
+$reCaptcha = new ReCaptcha($secret);
+
+if ($_POST["g-recaptcha-response"]) {
+    $response = $reCaptcha->verifyResponse(
+        $_SERVER["REMOTE_ADDR"],
+        $_POST["g-recaptcha-response"]
+    );
+}
+
+if (!$response) {
+    http_response_code(400);
+    echo json_encode(['type' => 'error', 'msg' => 'Por favor, comprueba de que no eres un robot!']);
+    exit;
+}
 
 $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
 $subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);
 $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 $isError = false;
-$errorMessage = 'En estos momentos no podemos enviar tu mensaje, por favor, intentalo más tarde.';
+
 
 //Validate first
 if (empty($name) || empty($email) || empty($message)) {
     http_response_code(400);
 
     echo json_encode([
-        'type' => 'error', 'msg' => 'Debes ingresar tu nombre, email y mensaje.'
+        'type' => 'error',
+        'msg' => 'Debes ingresar tu nombre, email y mensaje.'
     ]);
     exit;
 }
@@ -23,7 +46,8 @@ if (IsInjected($email)) {
     http_response_code(400);
 
     echo json_encode([
-        'type' => 'error', 'msg' => 'El email ingresado no es válido.'
+        'type' => 'error',
+        'msg' => 'El email ingresado no es válido :/'
     ]);
     exit;
 }
@@ -45,10 +69,10 @@ $mailheaders = "From: <hola@estudiomoca.com>\r\nReturn-Path: $email\r\n";
 $sending = mail($recipient, $sujet, $msg, $mailheaders);
 
 if ($sending) {
-    header('Content-Type: application/json');
-
     echo json_encode([
-        'type' => 'info', 'msg' => 'Hemos recibido tu mensaje, nos contactaremos pronto.'
+        'request' => $_REQUEST,
+        'type' => 'info',
+        'msg' => 'Pronto nos contáctaremos contigo ;)'
     ]);
     exit;
 } else {
