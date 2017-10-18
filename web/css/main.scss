@@ -3,7 +3,7 @@ $main-color: #ffb91c;
 $second-color: #6F2887;
 /*
 * 	Copyright 2017
-* 	www.estudiomoca.com
+* 	www.estudiomoca.cl
 */
 
 /* Table of Content
@@ -1264,6 +1264,9 @@ p.column {
     text-transform: uppercase;
     color: #333333;
   }
+  a {
+    color: $second-color;
+  }
 }
 
 /*End footer*/
@@ -1948,6 +1951,10 @@ header nav ul li.active a:after {
   header.fixed nav ul li.active a {
     color: $main-color;
   }
+  hr.mb-100 {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
   .btn-menu-mobile {
     display: block;
     &.open {
@@ -2505,4 +2512,10 @@ header nav ul li.active a:after {
 ::selection {
   color: #fff;
   background: $second-color;
+}
+
+.map .gmaps {
+  width: 100%;
+  min-height: 500px;
+  height: 100%;
 }

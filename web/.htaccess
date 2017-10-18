@@ -2,8 +2,8 @@ Options +FollowSymLinks
 RewriteEngine On
 RewriteBase /
 
-RewriteCond %{HTTP_HOST} (www\.)?estudiomoca\.cl$ [NC]
-RewriteRule ^(.*)$ https://www.estudiomoca.com [R=301,L]
+RewriteCond %{HTTP_HOST} (www\.)?estudiomoca\.com$ [NC]
+RewriteRule ^(.*)$ https://www.estudiomoca.cl [R=301,L]
 
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

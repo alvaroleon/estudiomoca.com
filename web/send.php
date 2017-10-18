@@ -62,9 +62,9 @@ $msg .= "Browser info : " . $_SERVER["HTTP_USER_AGENT"] . "\r\n";
 $msg .= "User come from : " . $_SERVER["SERVER_NAME"] . "\r\n";
 //$msg .= "Template Name : NEXT - MINIMAL MULTIPURPOSE HTML TEMPLATE";
 
-$recipient = "hola@estudiomoca.com";// Change the recipient email adress to your adrees
+$recipient = "hola@estudiomoca.cl";// Change the recipient email adress to your adrees
 $sujet = "Contacto Estudio Moca";
-$mailheaders = "From: <hola@estudiomoca.com>\r\nReturn-Path: $email\r\n";
+$mailheaders = "From: <hola@estudiomoca.cl>\r\nReturn-Path: $email\r\n";
 
 $sending = mail($recipient, $sujet, $msg, $mailheaders);
 
