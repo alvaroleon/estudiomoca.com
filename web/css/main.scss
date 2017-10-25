@@ -1544,9 +1544,25 @@ header {
       }
     }
   }
+  h1{
+    img{
+      &.justFixed{
+        display: none;
+      }
+    }
+  }
   &.fixed {
     /*background-color: rgba(243, 148,9,0.9);*/
     background-color: rgba(256, 256, 256, 0.99);
+    box-shadow: 0 0 10px #aaa;
+    h1{
+      img{
+        display: none;
+        &.justFixed{
+          display: block;
+        }
+      }
+    }
     progress {
       opacity: 1;
     }
